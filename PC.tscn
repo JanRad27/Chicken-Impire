@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Roboto_font_Big.tres" type="DynamicFont" id=1]
+[ext_resource path="res://PC.gd" type="Script" id=2]
+[ext_resource path="res://Roboto_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://EggTorg.png" type="Texture" id=4]
+[ext_resource path="res://Выкл.png" type="Texture" id=5]
+[ext_resource path="res://Chicken tinder.png" type="Texture" id=6]
+[ext_resource path="res://RoosterBank.png" type="Texture" id=7]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.898039, 0.886275, 0.0470588, 1 )
+
+[node name="Label_Special" type="Label" parent="."]
+visible = false
+margin_left = 5.0
+margin_top = 47.0
+margin_right = 103.0
+margin_bottom = 132.0
+rect_scale = Vector2( 3.89839, 1.79424 )
+custom_fonts/font = ExtResource( 3 )
+text = "Chicken is hungry"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 59.0
+margin_top = 49.0
+margin_right = 240.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 3 )
+text = "Яйце Торг"
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 301.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 3 )
+text = "Яйца: 0 | Сытость: 100%"
+align = 1
+valign = 1
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -242.5
+margin_top = -129.0
+margin_right = 242.5
+margin_bottom = 129.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Операционная Система \"Chicken's OS\""
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="."]
+margin_top = 510.0
+margin_right = 252.0
+margin_bottom = 603.0
+custom_fonts/font = ExtResource( 3 )
+text = "Завершение Работы"
+icon = ExtResource( 5 )
+expand_icon = true
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 57.0
+margin_top = 97.0
+margin_right = 242.0
+margin_bottom = 136.0
+custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 3 )
+text = "Куро Тиндер"
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 57.0
+margin_top = 143.0
+margin_right = 242.0
+margin_bottom = 182.0
+custom_fonts/font = ExtResource( 3 )
+text = "ПетухБанк"
+icon = ExtResource( 7 )
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="go_shop"]
+[connection signal="pressed" from="Button2" to="." method="poweroff"]
+[connection signal="pressed" from="Button3" to="." method="go_chinder"]
+[connection signal="pressed" from="Button4" to="." method="go_rooster_bank"]

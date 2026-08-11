@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Grass.png" type="Texture" id=1]
+[ext_resource path="res://Farmer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://House_out.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Kass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Street.gd" type="Script" id=6]
+[ext_resource path="res://Barn.tscn" type="PackedScene" id=10]
+
+[node name="Street" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1024, 800 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2000.0
+margin_bottom = 2000.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="House" parent="." instance=ExtResource( 4 )]
+position = Vector2( 229, 531 )
+
+[node name="Farmer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 232, 647 )
+
+[node name="Kass" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1571, 420 )
+scale = Vector2( 1, 1.32 )
+
+[node name="Barn" parent="." instance=ExtResource( 10 )]
+position = Vector2( 996, 444 )
