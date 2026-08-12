@@ -73,7 +73,7 @@ margin_top = -12.0
 margin_bottom = 12.0
 rect_rotation = -0.256861
 custom_fonts/font = ExtResource( 3 )
-text = "Больница №9 Новогрудского района | Прием жителей деревни \"Курия\""
+text = "HOSPITAL_TEXT"
 align = 1
 valign = 1
 

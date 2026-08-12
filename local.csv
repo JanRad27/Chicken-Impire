@@ -1,0 +1,15 @@
+key,ru,en
+GAME_NAME,Куриная Империя,Chicken Impire
+PLAY_BUTTON,Играть,Play
+SETTINGS_BUTTON,Настройки,Settings
+QUIT_BUTTON,Выход,Quit
+EGGTORG_APP,ЯйцеТорг,EggTorg
+CHINDER_APP,КуроТиндер,Chider
+CANCEL_BUTTON,Отмена,Cancel
+ROOSTERBANK_APP,ПетухБанк,RoosterBank
+OS_TEXT,"Операционная Система ""Chicken's OS""","""Chicken's OS"" Operating System"
+POWEROFF_BUTTON,Завершение Работы,Poweroff
+CONFIRM_TEXT,Подтверждение...,Confirmation...
+MENU_TEXT,Вы действительно хотите выйти в меню? Ваш прогресс не будет сброшен до закрытия игры,Are you sure you want to exit to the menu? Your progress will not be reset until you close the game.
+EGGS_TEXT,Яйца,Eggs
+SATIETY_TEXT,Сытость,Satiety

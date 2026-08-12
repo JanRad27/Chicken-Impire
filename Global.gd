@@ -170,6 +170,8 @@ func arrest(time):
 	player_may_move = true
 
 func generate_chicken_tinder_post():
+	if last_chicken_id == null:
+		return
 	# Сбор данных
 	var chicken_name
 	var chicken_first_name

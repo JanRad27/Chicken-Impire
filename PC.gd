@@ -33,7 +33,7 @@ func poweroff():
 func go_chinder():
 	get_tree().change_scene("res://ChickenTinder.tscn")
 func _process(delta):
-	$Label.text = "Яйца: " + str(Global.eggs) + " | Сытость: " + str(Global.satiety) + "%" + " | Деньги: " + str(Global.money)
+	$Label.text = tr("EGGS_TEXT") + ": " + str(Global.eggs) + " | " + tr("SATIETY_TEXT") + ": " + str(Global.satiety) + "%" + " | " + tr("MONEY_TEXT") + ": " + str(Global.money)
 func go_rooster_bank():
 	get_tree().change_scene("res://RoosterBank.tscn")
 func menu():

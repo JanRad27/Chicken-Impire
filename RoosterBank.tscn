@@ -41,7 +41,7 @@ anchor_right = 1.0
 margin_bottom = 36.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Вас приветствует ПетухБанк!"
+text = "ROOSTERBANKHELLO_TEXT"
 align = 1
 valign = 1
 
@@ -61,7 +61,7 @@ margin_right = 510.0
 margin_bottom = 127.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Кредиты"
+text = "CREDITS_BUTTON"
 icon = ExtResource( 2 )
 expand_icon = true
 
@@ -71,7 +71,7 @@ margin_right = 1024.0
 margin_bottom = 127.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Мой Баланс"
+text = "MYBALANCE_BUTTON"
 icon = ExtResource( 3 )
 expand_icon = true
 
@@ -80,7 +80,7 @@ margin_right = 204.0
 margin_bottom = 102.0
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 1 )
-text = "Выход"
+text = "QUIT_BUTTON"
 icon = ExtResource( 7 )
 
 [node name="Credits" type="Control" parent="."]
@@ -93,7 +93,7 @@ anchor_right = 1.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "ПетухБанк -> Кредиты"
+text = "ROOSTERBANKCREDITS_TEXT"
 align = 1
 valign = 1
 
@@ -114,7 +114,7 @@ margin_bottom = 149.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Взять Кредит"
+text = "TAKECREDIT_TEXT"
 icon = ExtResource( 5 )
 expand_icon = true
 
@@ -125,7 +125,7 @@ margin_bottom = 149.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
-text = "Информация о кредите"
+text = "CREDITINFO_TEXT"
 icon = ExtResource( 4 )
 expand_icon = true
 
@@ -134,7 +134,7 @@ margin_right = 12.0
 margin_bottom = 20.0
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 1 )
-text = "Назад"
+text = "BACK_BUTTON"
 icon = ExtResource( 7 )
 
 [node name="AddCredit" type="WindowDialog" parent="Credits"]
@@ -196,7 +196,7 @@ anchor_right = 1.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "ПетухБанк -> Мой Баланс"
+text = "ROOSTERBANKMYBALANCE_TEXT"
 align = 1
 valign = 1
 
@@ -205,7 +205,7 @@ margin_right = 12.0
 margin_bottom = 20.0
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 1 )
-text = "Назад"
+text = "BACK_BUTTON"
 icon = ExtResource( 7 )
 
 [node name="Balance" type="Label" parent="My Balance"]

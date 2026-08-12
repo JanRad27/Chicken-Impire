@@ -40,7 +40,7 @@ func confirm_credit():
 		Global.add_credit(summ, 50)
 func _process(delta):
 	$Credits/Info.dialog_text = ("Кредит взят: " + ("Да\n" if Global.in_credit else "Нет\n")) + "Сумма Кредита: " + str(Global.credit_summ["start"]) + "\nОсталось Выплатить: " + str(Global.credit_summ["remaining"])
-	$"My Balance/Balance".text = "Ваш Баланс: " + str(Global.money) + " Рублей"
+	$"My Balance/Balance".text = tr("MYBALANCE_TEXT") + " " + str(Global.money) + " " + tr("COINS_TEXT")
 func show_credit():
 	$Credits/Info.popup_centered()
 func go_quit():

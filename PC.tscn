@@ -51,7 +51,7 @@ margin_top = 49.0
 margin_right = 240.0
 margin_bottom = 86.0
 custom_fonts/font = ExtResource( 3 )
-text = "Яйце Торг"
+text = "EGGTORG_APP"
 icon = ExtResource( 4 )
 expand_icon = true
 
@@ -76,7 +76,7 @@ margin_right = 242.5
 margin_bottom = 129.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "Операционная Система \"Chicken's OS\""
+text = "OS_TEXT"
 align = 1
 valign = 1
 
@@ -85,7 +85,7 @@ margin_top = 510.0
 margin_right = 252.0
 margin_bottom = 603.0
 custom_fonts/font = ExtResource( 3 )
-text = "Завершение Работы"
+text = "POWEROFF_BUTTON"
 icon = ExtResource( 5 )
 expand_icon = true
 
@@ -96,7 +96,7 @@ margin_right = 242.0
 margin_bottom = 136.0
 custom_constants/hseparation = 0
 custom_fonts/font = ExtResource( 3 )
-text = "Куро Тиндер"
+text = "CHINDER_APP"
 icon = ExtResource( 6 )
 expand_icon = true
 
@@ -106,7 +106,7 @@ margin_top = 143.0
 margin_right = 242.0
 margin_bottom = 182.0
 custom_fonts/font = ExtResource( 3 )
-text = "ПетухБанк"
+text = "ROOSTERBANK_APP"
 icon = ExtResource( 7 )
 expand_icon = true
 
@@ -118,14 +118,13 @@ margin_bottom = 96.0
 texture_normal = ExtResource( 8 )
 
 [node name="Quit_dialog" type="WindowDialog" parent="."]
-visible = true
 margin_left = 348.0
 margin_top = 55.0
 margin_right = 650.0
 margin_bottom = 149.0
 theme = SubResource( 1 )
 popup_exclusive = true
-window_title = "Подтверждение..."
+window_title = "CONFIRM_TEXT"
 
 [node name="Label" type="Label" parent="Quit_dialog"]
 anchor_right = 1.0
@@ -133,7 +132,7 @@ margin_top = 9.0
 margin_right = 2.0
 margin_bottom = 66.0
 custom_fonts/font = ExtResource( 3 )
-text = "Вы действительно хотите выйти в меню? Ваш прогресс не будет сброшен до закрытия игры"
+text = "MENU_TEXT"
 autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Quit_dialog"]
@@ -147,7 +146,7 @@ margin_right = 149.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Выход"
+text = "QUIT_BUTTON"
 
 [node name="Button2" type="Button" parent="Quit_dialog/HBoxContainer"]
 margin_left = 153.0
@@ -155,7 +154,7 @@ margin_right = 302.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Отмена"
+text = "CANCEL_BUTTON"
 
 [connection signal="pressed" from="Button" to="." method="go_shop"]
 [connection signal="pressed" from="Button2" to="." method="poweroff"]
