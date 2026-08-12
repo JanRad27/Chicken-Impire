@@ -18,9 +18,9 @@ func _ready():
 	
 func eat_grass():
 	if my_data["satiety"] > 0:
-		$Sprite.texture = preload("res://Chicken-Eating-Grass.png")
+		$Sprite.texture = preload("res://images/Chicken-Eating-Grass.png")
 		yield(get_tree().create_timer(1.0), "timeout")
-		$Sprite.texture = preload("res://Chicken.png")
+		$Sprite.texture = preload("res://images/Chicken.png")
 func _process(delta):
 	for chicken in Global.chickens.values():
 		if chicken["id"] == chicken_id:

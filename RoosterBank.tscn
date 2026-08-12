@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Roboto_font_Big.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Credit.png" type="Texture" id=2]
-[ext_resource path="res://Card.png" type="Texture" id=3]
-[ext_resource path="res://List.png" type="Texture" id=4]
-[ext_resource path="res://ADD.png" type="Texture" id=5]
+[ext_resource path="res://images/Credit.png" type="Texture" id=2]
+[ext_resource path="res://images/Card.png" type="Texture" id=3]
+[ext_resource path="res://images/List.png" type="Texture" id=4]
+[ext_resource path="res://images/ADD.png" type="Texture" id=5]
 [ext_resource path="res://RoosterBank.gd" type="Script" id=6]
-[ext_resource path="res://Quit.png" type="Texture" id=7]
+[ext_resource path="res://images/Quit.png" type="Texture" id=7]
 [ext_resource path="res://Roboto_font.tres" type="DynamicFont" id=8]
 [ext_resource path="res://Roboto_Font_Medium.tres" type="DynamicFont" id=9]
 

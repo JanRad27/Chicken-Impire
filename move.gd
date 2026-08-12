@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-var right_texture = preload("res://Farmer.png")
-var left_texture = preload("res://Farmer-left.png")
+var right_texture = preload("res://images/Farmer.png")
+var left_texture = preload("res://images/Farmer-left.png")
 
 # Твоя новая прокачанная скорость бега фермера!
 var speed = 200 

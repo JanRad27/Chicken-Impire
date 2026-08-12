@@ -4,7 +4,7 @@
 [ext_resource path="res://Farmer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Roboto_Font_Medium.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Hospital.gd" type="Script" id=4]
-[ext_resource path="res://Quit.png" type="Texture" id=5]
+[ext_resource path="res://images/Quit.png" type="Texture" id=5]
 [ext_resource path="res://Roboto_font.tres" type="DynamicFont" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
