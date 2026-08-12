@@ -36,3 +36,15 @@ func _process(delta):
 	$Label.text = "Яйца: " + str(Global.eggs) + " | Сытость: " + str(Global.satiety) + "%" + " | Деньги: " + str(Global.money)
 func go_rooster_bank():
 	get_tree().change_scene("res://RoosterBank.tscn")
+func menu():
+	var dialog = $Quit_dialog
+	var dialog_quit = $Quit_dialog/HBoxContainer/Button
+	var dialog_decline = $Quit_dialog/HBoxContainer/Button2
+	dialog.popup_centered()
+	dialog_quit.connect("pressed", self, "quit")
+	dialog_decline.connect("pressed", self, "decline_quit")
+	yield(dialog, "popup_hide")
+func quit():
+	get_tree().change_scene("res://Menu.tscn")
+func decline_quit():
+	$Quit_dialog.hide()

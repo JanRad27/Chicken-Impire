@@ -73,45 +73,47 @@ func _ready():
 	# ТО САМОЕ ИСПРАВЛЕНИЕ: Жёстко запускаем таймер вручную!
 	timer.start() 
 func _update():
-	for chicken in chickens.values():
-		if chicken["satiety"] > 0:
-			chicken["satiety"] -= 1
-			eggs += 1
-	if not player_arrested:
-		satiety -= hugrying_speed
-	else:
-		player_arrest_time -= 1 
-		satiety = 100.0
-		if player_arrest_time <= 0:
-			player_arrested = false
-			get_tree().change_scene("res://Street.tscn")
-	if len(chiken_tinder_posts) < 10:
-		generate_chicken_tinder_post()
+	if get_tree().current_scene and not get_tree().current_scene.filename == "res://Menu.tscn":
+		for chicken in chickens.values():
+			if chicken["satiety"] > 0:
+				chicken["satiety"] -= 1 
+				eggs += 1
+		if not player_arrested:
+			satiety -= hugrying_speed
+		else:
+			player_arrest_time -= 1 
+			satiety = 100.0
+			if player_arrest_time <= 0:
+				player_arrested = false
+				get_tree().change_scene("res://Street.tscn")
+		if len(chiken_tinder_posts) < 10:
+			generate_chicken_tinder_post()
 func _process(_delta):
-	# Растягиваем его под разрешение экрана твоего ноутбука Acer [221.1, 395.1]
-	if fade_screen:
-		fade_screen.rect_size = get_viewport().size
-	for chicken in chickens.values():
-		if chicken["satiety"] > 100:
-			chicken["satiety"] = 100
-	if satiety <= 0:
-		satiety = 100.0
-		fade()
-	for chicken in chickens.values():
-		last_chicken_id = chicken["id"]
-	for post in chiken_tinder_posts:
-		if post["id"] > last_chicken_id:
-			last_chicken_id = post["id"]
-	if rooster_bank_prison_timer >= 10:
-		var true_summ = int(credit_summ["remaining"])
-		clear_credit()
-		window.window_title = "КуроГрамм: ПетухБанк - Сообщение"
-		window.dialog_text = "Срок выплаты кредита истек! Вы будете отправлены в тюрьму на " + str(true_summ) + " секунд!"
-		window.popup_centered()
-		yield(window, "popup_hide")
-		arrest(true_summ)
-	if credit_summ["remaining"] <= 0 and in_credit:
-		clear_credit()
+	if get_tree().current_scene and not get_tree().current_scene.filename == "res://Menu.tscn":
+		# Растягиваем его под разрешение экрана твоего ноутбука Acer [221.1, 395.1]
+		if fade_screen:
+			fade_screen.rect_size = get_viewport().size
+		for chicken in chickens.values():
+			if chicken["satiety"] > 100:
+				chicken["satiety"] = 100
+		if satiety <= 0:
+			satiety = 100.0
+			fade()
+		for chicken in chickens.values():
+			last_chicken_id = chicken["id"]
+		for post in chiken_tinder_posts:
+			if post["id"] > last_chicken_id:
+				last_chicken_id = post["id"]
+		if rooster_bank_prison_timer >= 10:
+			var true_summ = int(credit_summ["remaining"])
+			clear_credit()
+			window.window_title = "КуроГрамм: ПетухБанк - Сообщение"
+			window.dialog_text = "Срок выплаты кредита истек! Вы будете отправлены в тюрьму на " + str(true_summ) + " секунд!"
+			window.popup_centered()
+			yield(window, "popup_hide")
+			arrest(true_summ)
+		if credit_summ["remaining"] <= 0 and in_credit:
+			clear_credit()
 func hungry_farmer(points):
 	satiety -= points
 func fade():
@@ -188,14 +190,15 @@ func generate_chicken_tinder_post():
 	chiken_tinder_posts.append(post)
 	now_like_cost += 10
 func credit_pay():
-	if in_credit:
-		var need_to_pay = credit_summ["start"] * 5 / 100.0
-		if money >= need_to_pay:
-			money -= need_to_pay
-			credit_summ["remaining"] -= need_to_pay
-		else:
-			rooster_bank_prison_timer += 1
-			print(rooster_bank_prison_timer)
+	if get_tree().current_scene and not get_tree().current_scene.filename == "res://Menu.tscn":
+		if in_credit:
+			var need_to_pay = credit_summ["start"] * 5 / 100.0
+			if money >= need_to_pay:
+				money -= need_to_pay
+				credit_summ["remaining"] -= need_to_pay
+			else:
+				rooster_bank_prison_timer += 1
+				print(rooster_bank_prison_timer)
 func add_credit(summ, add_procent):
 	var summ_true = summ + (summ * add_procent / 100.0) 
 	print(summ_true)
