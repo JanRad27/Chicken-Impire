@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Hospital_Bed.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Farmer.tscn" type="PackedScene" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Hospital.gd" type="Script" id=4]
 [ext_resource path="res://images/Quit.png" type="Texture" id=5]
 [ext_resource path="res://Roboto_font.tres" type="DynamicFont" id=6]
+[ext_resource path="res://images/Right.png" type="Texture" id=7]
+[ext_resource path="res://images/Left.png" type="Texture" id=8]
+[ext_resource path="res://images/down.png" type="Texture" id=9]
+[ext_resource path="res://images/up.png" type="Texture" id=10]
+[ext_resource path="res://images/use.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 42.75, 35 )
@@ -109,6 +114,44 @@ margin_bottom = 40.0
 [node name="Camera2D" type="Camera2D" parent="Control"]
 position = Vector2( 514, 300 )
 current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 966, 486 )
+scale = Vector2( 0.479167, 0.541667 )
+normal = ExtResource( 7 )
+action = "move-right"
+visibility_mode = 1
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 849, 488 )
+scale = Vector2( 0.479167, 0.541667 )
+normal = ExtResource( 8 )
+action = "move-left"
+visibility_mode = 1
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 907, 421 )
+scale = Vector2( 0.479167, 0.541667 )
+normal = ExtResource( 10 )
+action = "move-up"
+visibility_mode = 1
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 907, 545 )
+scale = Vector2( 0.479167, 0.541667 )
+normal = ExtResource( 9 )
+action = "move-down"
+visibility_mode = 1
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 907, 486 )
+scale = Vector2( 0.479167, 0.541667 )
+normal = ExtResource( 11 )
+action = "action-use"
+visibility_mode = 1
 
 [connection signal="body_entered" from="Door/Area2D" to="." method="out"]
 [connection signal="confirmed" from="Pay" to="." method="_pay"]
