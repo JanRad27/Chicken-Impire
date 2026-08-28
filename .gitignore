@@ -16,5 +16,5 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
-# Android Build Ingnore
+# Android Build Ignore
 android/
