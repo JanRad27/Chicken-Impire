@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://images/Chicken.png" type="Texture" id=1]
+[ext_resource path="res://scripts/ChickenTinderPost.gd" type="Script" id=2]
+[ext_resource path="res://images/Like.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Roboto_font_Big.tres" type="DynamicFont" id=4]
+[ext_resource path="res://images/Dislike.png" type="Texture" id=5]
+[ext_resource path="res://images/RoosterBankMoney.png" type="Texture" id=6]
+
+[node name="ChickenTinderPost" type="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/separation = 30
+script = ExtResource( 2 )
+chicken_name = "Насетка Галина"
+chicken_about = "Люблю кукурузу"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 200, 150 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Name" type="Label" parent="."]
+margin_top = 180.0
+margin_right = 1024.0
+margin_bottom = 216.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+text = "Имя"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="."]
+margin_top = 246.0
+margin_right = 1024.0
+margin_bottom = 282.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+text = "О себе"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 312.0
+margin_right = 1024.0
+margin_bottom = 474.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="LikeButton" type="TextureButton" parent="HBoxContainer"]
+margin_left = 414.0
+margin_right = 510.0
+margin_bottom = 162.0
+texture_normal = ExtResource( 3 )
+stretch_mode = 5
+
+[node name="DislikeButton" type="TextureButton" parent="HBoxContainer"]
+margin_left = 514.0
+margin_right = 610.0
+margin_bottom = 162.0
+texture_normal = ExtResource( 5 )
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_top = 504.0
+margin_right = 1024.0
+margin_bottom = 600.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+margin_left = 385.0
+margin_top = 10.0
+margin_right = 538.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 4 )
+text = "Цена лайка:
+50"
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
+margin_left = 542.0
+margin_right = 638.0
+margin_bottom = 96.0
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="HBoxContainer/LikeButton" to="." method="_liked"]
+[connection signal="pressed" from="HBoxContainer/DislikeButton" to="." method="_disliked"]

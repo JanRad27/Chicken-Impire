@@ -1,0 +1,163 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://fonts/Roboto_font_Big.tres" type="DynamicFont" id=1]
+[ext_resource path="res://PC.gd" type="Script" id=2]
+[ext_resource path="res://fonts/Roboto_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://images/EggTorg.png" type="Texture" id=4]
+[ext_resource path="res://images/Выкл.png" type="Texture" id=5]
+[ext_resource path="res://images/Chicken tinder.png" type="Texture" id=6]
+[ext_resource path="res://images/RoosterBank.png" type="Texture" id=7]
+[ext_resource path="res://images/Menu.png" type="Texture" id=8]
+
+[sub_resource type="Theme" id=1]
+Button/fonts/font = ExtResource( 3 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+Label/constants/line_spacing = 0
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/fonts/font = ExtResource( 3 )
+Label/styles/normal = null
+WindowDialog/fonts/title_font = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.898039, 0.886275, 0.0470588, 1 )
+
+[node name="Label_Special" type="Label" parent="."]
+visible = false
+margin_left = 5.0
+margin_top = 47.0
+margin_right = 103.0
+margin_bottom = 132.0
+rect_scale = Vector2( 3.89839, 1.79424 )
+custom_fonts/font = ExtResource( 3 )
+text = "Chicken is hungry"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 59.0
+margin_top = 49.0
+margin_right = 240.0
+margin_bottom = 86.0
+custom_fonts/font = ExtResource( 3 )
+text = "EGGTORG_APP"
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1.0
+margin_top = 2.0
+margin_right = 301.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 3 )
+text = "Яйца: 0 | Сытость: 100%"
+align = 1
+valign = 1
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -242.5
+margin_top = -129.0
+margin_right = 242.5
+margin_bottom = 129.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "OS_TEXT"
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="."]
+margin_top = 510.0
+margin_right = 252.0
+margin_bottom = 603.0
+custom_fonts/font = ExtResource( 3 )
+text = "POWEROFF_BUTTON"
+icon = ExtResource( 5 )
+expand_icon = true
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 57.0
+margin_top = 97.0
+margin_right = 242.0
+margin_bottom = 136.0
+custom_constants/hseparation = 0
+custom_fonts/font = ExtResource( 3 )
+text = "CHINDER_APP"
+icon = ExtResource( 6 )
+expand_icon = true
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 57.0
+margin_top = 143.0
+margin_right = 242.0
+margin_bottom = 182.0
+custom_fonts/font = ExtResource( 3 )
+text = "ROOSTERBANK_APP"
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -96.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 8 )
+
+[node name="Quit_dialog" type="WindowDialog" parent="."]
+margin_left = 348.0
+margin_top = 55.0
+margin_right = 650.0
+margin_bottom = 149.0
+theme = SubResource( 1 )
+popup_exclusive = true
+window_title = "CONFIRM_TEXT"
+
+[node name="Label" type="Label" parent="Quit_dialog"]
+anchor_right = 1.0
+margin_top = 9.0
+margin_right = 2.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 3 )
+text = "MENU_TEXT"
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Quit_dialog"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -25.0
+
+[node name="Button" type="Button" parent="Quit_dialog/HBoxContainer"]
+margin_right = 149.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "QUIT_BUTTON"
+
+[node name="Button2" type="Button" parent="Quit_dialog/HBoxContainer"]
+margin_left = 153.0
+margin_right = 302.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "CANCEL_BUTTON"
+
+[connection signal="pressed" from="Button" to="." method="go_shop"]
+[connection signal="pressed" from="Button2" to="." method="poweroff"]
+[connection signal="pressed" from="Button3" to="." method="go_chinder"]
+[connection signal="pressed" from="Button4" to="." method="go_rooster_bank"]
+[connection signal="pressed" from="TextureButton" to="." method="menu"]

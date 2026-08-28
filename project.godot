@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="Куриная Империя"
-run/main_scene="res://Menu.tscn"
+run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://images/King_Chicken.png"
 
 [autoload]
 
-Global="*res://Global.gd"
+Global="*res://scripts/Global.gd"
 
 [display]
 
@@ -61,7 +61,7 @@ action-use={
 
 [locale]
 
-translations=PoolStringArray( "res://local2.ru.translation", "res://local2.en.translation" )
+translations=PoolStringArray( "res://local/local2.en.translation", "res://local/local2.ru.translation" )
 
 [physics]
 
