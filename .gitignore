@@ -18,3 +18,5 @@ data_*/
 mono_crash.*.json
 # Android Build Ignore
 android/
+# Vim swap ignore
+*.swp
