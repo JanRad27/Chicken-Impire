@@ -5,8 +5,11 @@ var lever_use_active = false
 
 
 func _ready():
-	pass
-
+	$ULLayer/ULMenu/VBoxContainer/ItemList.set_item_text(0, tr("WHEAT_TEXT"))
+	$ULLayer/ULMenu/VBoxContainer/ItemList.set_item_text(1, tr("CORN_TEXT"))
+	$ULLayer/ULMenu/VBoxContainer/ItemList.set_item_text(2, tr("COMPOUND3_TEXT"))
+	$ULLayer/ULMenu/VBoxContainer/ItemList.set_item_text(3, tr("COMPOUND2_TEXT"))
+	$ULLayer/ULMenu/VBoxContainer/ItemList.set_item_text(4, tr("COMPOUND1_TEXT"))
 func _collect(body):
 	if "Bug_Corn" in body.name:
 		Global.total_stored["corn"] += body.eat_count_kg

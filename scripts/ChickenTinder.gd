@@ -9,10 +9,6 @@ func _ready():
 		var new_post = post_scene.instance()
 		$Scroll/VBoxContainer.add_child(new_post)
 		new_post.rect_min_size = Vector2(200, 200)
-#		post["name"]
-#		post["id"]
-#		post["about"]
-#		post["like_cost"]
 		new_post.setup_card(post["name"], post["id"], post["about"], post["like_cost"])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

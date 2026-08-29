@@ -15,7 +15,7 @@ func _ready():
 func _process(_delta):
 	$Name.text = chicken_name
 	$Me.text = chicken_about
-	$HBoxContainer2/Label.text = "Цена лайка: " + str(like_cost)
+	$HBoxContainer2/Label.text = tr("LIKECOST_TEXT") % like_cost
 	
 
 func _liked():

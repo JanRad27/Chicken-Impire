@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/Roboto_font_Big.tres" type="DynamicFont" id=1]
+[ext_resource path="res://images/Russia.png" type="Texture" id=2]
+[ext_resource path="res://images/America.png" type="Texture" id=3]
+[ext_resource path="res://Settings.gd" type="Script" id=4]
+
+[sub_resource type="Theme" id=1]
+Label/fonts/font = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+Button/fonts/font = ExtResource( 1 )
+PopupMenu/fonts/font = ExtResource( 1 )
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0.654902, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1010.0
+margin_bottom = 43.0
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 1 )
+text = "SETTINGS_BUTTON"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 50.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 1024.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 300, 100 )
+size_flags_horizontal = 3
+theme = SubResource( 1 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 1 )
+text = "LANG_TEXT"
+align = 1
+valign = 1
+
+[node name="OptionButton" type="OptionButton" parent="ScrollContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 1024.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 0, 70 )
+theme = SubResource( 2 )
+custom_constants/hseparation = 10
+custom_fonts/font = ExtResource( 1 )
+text = "Русский"
+icon = ExtResource( 2 )
+align = 1
+expand_icon = true
+items = [ "Русский", ExtResource( 2 ), false, 0, null, "English", ExtResource( 3 ), false, 1, null ]
+selected = 0
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer"]
+margin_top = 114.0
+margin_right = 1024.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 50 )
+custom_fonts/font = ExtResource( 1 )
+text = "MENU_BUTTON"
+
+[connection signal="item_selected" from="ScrollContainer/VBoxContainer/OptionButton" to="." method="_change_language"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Button" to="." method="_menu"]

@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	TranslationServer.set_locale("ru")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,3 +14,5 @@ func _start():
 	get_tree().change_scene("res://scenes/PC.tscn")
 func _quit():
 	get_tree().quit()
+func _settings():
+	get_tree().change_scene("res://Settings.tscn")

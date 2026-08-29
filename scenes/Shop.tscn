@@ -27,7 +27,7 @@ margin_top = -2.0
 margin_right = -1.0
 margin_bottom = 27.0
 custom_fonts/font = ExtResource( 2 )
-text = "Яйце Торг"
+text = "EGGTORG_APP"
 align = 1
 valign = 1
 
@@ -39,7 +39,7 @@ tab_align = 0
 all_tabs_in_front = true
 drag_to_rearrange_enabled = true
 
-[node name="Еда для курей" type="Tabs" parent="TabContainer"]
+[node name="CHICKENEAT_TAB" type="Tabs" parent="TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -48,66 +48,66 @@ margin_right = -4.0
 margin_bottom = -4.0
 custom_fonts/font = ExtResource( 2 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Еда для курей"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/CHICKENEAT_TAB"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Еда для курей/ScrollContainer"]
-margin_right = 1675.0
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/CHICKENEAT_TAB/ScrollContainer"]
+margin_right = 1356.0
 margin_bottom = 102.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Еда для курей/ScrollContainer/VBoxContainer"]
-margin_right = 1675.0
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer"]
+margin_right = 1356.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_right = 300.0
+[node name="Button" type="Button" parent="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_right = 237.0
 margin_bottom = 102.0
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Кукурузу(30 Рублей)"
+text = "BUYCORN_BUTTON"
 icon = ExtResource( 4 )
 
-[node name="Button2" type="Button" parent="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 304.0
-margin_right = 606.0
+[node name="Button2" type="Button" parent="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 241.0
+margin_right = 489.0
 margin_bottom = 102.0
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Пшеницу(60 Рублей)"
+text = "BUYWHEAT_BUTTON"
 icon = ExtResource( 5 )
 
-[node name="Button3" type="Button" parent="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 610.0
-margin_right = 957.0
+[node name="Button3" type="Button" parent="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 493.0
+margin_right = 778.0
 margin_bottom = 102.0
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Комбикорм К-3(90 Рублей)"
+text = "BUYCOMPOUND3_BUTTON"
 icon = ExtResource( 6 )
 
-[node name="Button4" type="Button" parent="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 961.0
-margin_right = 1316.0
+[node name="Button4" type="Button" parent="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 782.0
+margin_right = 1067.0
 margin_bottom = 102.0
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Комбикорм К-2(120 Рублей)"
+text = "BUYCOMPOUND2_BUTTON"
 icon = ExtResource( 8 )
 
-[node name="Button5" type="Button" parent="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 1320.0
-margin_right = 1675.0
+[node name="Button5" type="Button" parent="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 1071.0
+margin_right = 1356.0
 margin_bottom = 102.0
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Комбикорм К-1(150 Рублей)"
+text = "BUYCOMPOUND1_BUTTON"
 icon = ExtResource( 7 )
 
-[node name="Label" type="Label" parent="TabContainer/Еда для курей/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer"]
 visible = false
 margin_top = 29.0
 margin_right = 1037.0
 margin_bottom = 43.0
 custom_fonts/font = ExtResource( 2 )
 
-[node name="Бройлерский Ресторан" type="Tabs" parent="TabContainer"]
+[node name="BROILERREST_TAB" type="Tabs" parent="TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -116,75 +116,75 @@ margin_top = 37.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Бройлерский Ресторан"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/BROILERREST_TAB"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Бройлерский Ресторан/ScrollContainer"]
-margin_right = 1807.0
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/BROILERREST_TAB/ScrollContainer"]
+margin_right = 1450.0
 margin_bottom = 102.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer"]
-margin_right = 1807.0
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer"]
+margin_right = 1450.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_right = 308.0
+[node name="Button" type="Button" parent="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_right = 262.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Сухой Паек(3 Рубля)"
+text = "BUYDRYRAT_BUTTON"
 icon = ExtResource( 13 )
 
-[node name="Button2" type="Button" parent="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 312.0
-margin_right = 708.0
+[node name="Button2" type="Button" parent="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 266.0
+margin_right = 574.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Макароны с сосисками(5 Рублей)"
+text = "BUYPASTASOSISKI_BUTTON"
 icon = ExtResource( 11 )
 
-[node name="Button3" type="Button" parent="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 712.0
-margin_right = 1109.0
+[node name="Button3" type="Button" parent="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 578.0
+margin_right = 870.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Тушенку с макаронами(7 Рублей)"
+text = "BUYSTEWPASTA_BUTTON"
 icon = ExtResource( 12 )
 
-[node name="Button4" type="Button" parent="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 1113.0
-margin_right = 1510.0
+[node name="Button4" type="Button" parent="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 874.0
+margin_right = 1176.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Тушенку с картошкой(10 Рублей)"
+text = "BUYSTEWPOTATO_BUTTON"
 icon = ExtResource( 10 )
 
-[node name="Button5" type="Button" parent="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer"]
-margin_left = 1514.0
-margin_right = 1807.0
+[node name="Button5" type="Button" parent="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer"]
+margin_left = 1180.0
+margin_right = 1450.0
 margin_bottom = 102.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 2 )
-text = "Купить Беляш(15 Рублей)"
+text = "BUYBELYASH_BUTTON"
 icon = ExtResource( 9 )
 
-[node name="Label" type="Label" parent="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer"]
 visible = false
 margin_top = 106.0
 margin_right = 1675.0
@@ -198,18 +198,18 @@ margin_left = -68.0
 margin_right = 68.0
 margin_bottom = 26.0
 custom_fonts/font = ExtResource( 2 )
-text = "Выход"
+text = "QUIT_BUTTON"
 icon = ExtResource( 3 )
 expand_icon = true
 
-[connection signal="pressed" from="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer/Button" to="." method="buy_corn"]
-[connection signal="pressed" from="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer/Button2" to="." method="buy_wheat"]
-[connection signal="pressed" from="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer/Button3" to="." method="buy_compound_feed" binds= [ 3 ]]
-[connection signal="pressed" from="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer/Button4" to="." method="buy_compound_feed" binds= [ 2 ]]
-[connection signal="pressed" from="TabContainer/Еда для курей/ScrollContainer/VBoxContainer/HBoxContainer/Button5" to="." method="buy_compound_feed" binds= [ 1 ]]
-[connection signal="pressed" from="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer/Button" to="." method="buy_dry_rations"]
-[connection signal="pressed" from="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer/Button2" to="." method="buy_pasta_sosiski"]
-[connection signal="pressed" from="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer/Button3" to="." method="buy_pasta_tysenka"]
-[connection signal="pressed" from="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer/Button4" to="." method="buy_potato_tysenka"]
-[connection signal="pressed" from="TabContainer/Бройлерский Ресторан/ScrollContainer/VBoxContainer/HBoxContainer/Button5" to="." method="buy_belyash"]
+[connection signal="pressed" from="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button" to="." method="buy_corn"]
+[connection signal="pressed" from="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button2" to="." method="buy_wheat"]
+[connection signal="pressed" from="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button3" to="." method="buy_compound_feed" binds= [ 3 ]]
+[connection signal="pressed" from="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button4" to="." method="buy_compound_feed" binds= [ 2 ]]
+[connection signal="pressed" from="TabContainer/CHICKENEAT_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button5" to="." method="buy_compound_feed" binds= [ 1 ]]
+[connection signal="pressed" from="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button" to="." method="buy_dry_rations"]
+[connection signal="pressed" from="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button2" to="." method="buy_pasta_sosiski"]
+[connection signal="pressed" from="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button3" to="." method="buy_pasta_tysenka"]
+[connection signal="pressed" from="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button4" to="." method="buy_potato_tysenka"]
+[connection signal="pressed" from="TabContainer/BROILERREST_TAB/ScrollContainer/VBoxContainer/HBoxContainer/Button5" to="." method="buy_belyash"]
 [connection signal="pressed" from="Button" to="." method="go_home"]

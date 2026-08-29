@@ -53,6 +53,7 @@ shape = SubResource( 3 )
 [node name="ULLayer" type="CanvasLayer" parent="."]
 
 [node name="ULMenu" type="WindowDialog" parent="ULLayer"]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -64,7 +65,7 @@ margin_bottom = -177.5
 mouse_filter = 1
 custom_fonts/title_font = ExtResource( 10 )
 popup_exclusive = true
-window_title = "Разгрузка Еды"
+window_title = "UNLOAD_TEXT"
 resizable = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ULLayer/ULMenu"]
@@ -91,7 +92,7 @@ rect_min_size = Vector2( 200, 100 )
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 custom_fonts/font = ExtResource( 10 )
-items = [ "Пшеница", ExtResource( 7 ), false, "Кукуруза", ExtResource( 9 ), false, "Комбикорм-К3", ExtResource( 5 ), false, "Комбикорм-К2", ExtResource( 6 ), false, "Комбикорм-К1", ExtResource( 8 ), false ]
+items = [ "WHEAT_TEXT", ExtResource( 7 ), false, "CORN_TEXT", ExtResource( 9 ), false, "COMPOUND3_TEXT", ExtResource( 5 ), false, "COMPOUND2_TEXT", ExtResource( 6 ), false, "COMPOUND1_TEXT", ExtResource( 8 ), false ]
 max_text_lines = 2
 
 [node name="LineEdit" type="LineEdit" parent="ULLayer/ULMenu/VBoxContainer"]
@@ -100,7 +101,7 @@ margin_right = 290.0
 margin_bottom = 151.0
 custom_fonts/font = ExtResource( 10 )
 align = 1
-placeholder_text = "Введите Количество(КГ)"
+placeholder_text = "ENTERWEIGHT_TEXT"
 
 [node name="Error" type="Label" parent="ULLayer/ULMenu/VBoxContainer"]
 margin_top = 155.0
@@ -120,7 +121,7 @@ margin_left = -94.5
 margin_top = -30.0
 margin_right = 94.5
 custom_fonts/font = ExtResource( 4 )
-text = "Подтвердить"
+text = "CONFIRM_BUTTON"
 
 [connection signal="body_entered" from="Collection_Area" to="." method="_collect"]
 [connection signal="body_entered" from="Lever_Area" to="." method="_lever_active"]

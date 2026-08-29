@@ -1,38 +1,90 @@
-keys,ru,en,
-GAME_NAME,Куриная Империя,Chicken Impire,
-PLAY_BUTTON,Играть,Play,
-SETTINGS_BUTTON,Настройки,Settings,
-QUIT_BUTTON,Выход,Quit,
-EGGTORG_APP,ЯйцеТорг,EggTorg,
-CHINDER_APP,КуроТиндер,Chider,
-CANCEL_BUTTON,Отмена,Cancel,
-ROOSTERBANK_APP,ПетухБанк,RoosterBank,
-OS_TEXT,"Операционная Система ""Chicken's OS""","""Chicken's OS"" Operating System",
-POWEROFF_BUTTON,Завершение Работы,Poweroff,
-CONFIRM_TEXT,Подтверждение...,Confirmation...,
-MENU_TEXT,Вы действительно хотите выйти в меню? Ваш прогресс не будет сброшен до закрытия игры,Are you sure you want to exit to the menu? Your progress will not be reset until you close the game.,
-EGGS_TEXT,Яйца,Eggs,
-SATIETY_TEXT,Сытость,Satiety,
-MONEY_TEXT,Деньги,Money,
-HOSPITAL_TEXT,"Больница №9 Новогрудского района | Прием жителей деревни ""Курия""","Hospital №9 of the Novogrudok District | Reception of village ""Kyria"" residents",
-CREDITS_BUTTON,Кредиты,Credits,
-MYBALANCE_BUTTON,Мой Баланс,My Balance,
-ROOSTERBANKHELLO_TEXT,Вас приветствует ПетухБанк,Welcome to RoosterBank!,
-TAKECREDIT_TEXT,Взять Кредит,Take a credit,
-CREDITINFO_TEXT,Информация о кредите,Credit Info,
-ROOSTERBANKCREDITS_TEXT,ПетухБанк -> Кредиты,RoosterBank -> Credits,
-BACK_BUTTON,Назад,Back,
-ROOSTERBANKMYBALANCE_TEXT,ПетухБанк -> Мой Баланс,RoosterBank -> My Balance,
-MYBALANCE_TEXT,Ваш Баланс:,Your Balance:,
-COINS_TEXT,Рублей,USD,
-DRIP_TEXT,Счет за Капельницу: 50 Рублей,Bill for drip: 50 USD,
-BUYCORN_BUTTON,Купить Кукурузу(30 Рублей),Buy corn(30 USD),
-BUYWHEAT_BUTTON,Купить Пшеницу(60 Рублей),Buy wheat(60 USD),
-BUYCOMPOUND3_BUTTON,Купить Комбикорм К-3(90 Рублей),Buy compound food K-3(90 USD),
-BUYCOMPOUND2_BUTTON,Купить Комбикорм К-2(120 Рублей),Buy compound food K-2(120 USD),
-BUYCOMPOUND1_BUTTON,Купить комбикорм К-1(150 Рублей),Buy compound food K-1(150 USD),
-BUYDRYRAT_BUTTON,Купить Сухой Паек(3 Рубля),Buy Dry Rations(3 USD),
-BUYPASTASOSISKI_BUTTON,Купить Макароны с сосисками(5 Рублей),Buy Pasta with Sausages(5 USD),
-BUYSTEWPASTA_BUTTON,Купить Тушенку с макаронами(7 Рублей),Buy stewed meat with pasta (7 USD),
-BUYSTEWPOTATO_BUTTON,Купить Тушенку с картошкой(10 Рублей),,Buy stew with potato(10 USD)
-BUYBELYASH_BUTTON,Купить Беляш(15 Рублей),Buy Belyash(15 USD),
+keys,ru,en
+GAME_NAME,Куриная Империя,Chicken Impire
+PLAY_BUTTON,Играть,Play
+SETTINGS_BUTTON,Настройки,Settings
+QUIT_BUTTON,Выход,Quit
+EGGTORG_APP,ЯйцеТорг,EggTorg
+CHINDER_APP,КуроТиндер,Chinder
+CANCEL_BUTTON,Отмена,Cancel
+ROOSTERBANK_APP,ПетухБанк,RoosterBank
+OS_TEXT,"Операционная Система ""Chicken's OS""","""Chicken's OS"" Operating System"
+POWEROFF_BUTTON,Завершение Работы,Poweroff
+CONFIRM_TEXT,Подтверждение...,Confirmation...
+MENU_TEXT,Вы действительно хотите выйти в меню? Ваш прогресс не будет сброшен до закрытия игры,Are you sure want to exit to the menu? Your progress will not be reset until you close the game.
+EGGS_TEXT,Яйца,Eggs
+SATIETY_TEXT,Сытость,Satiety
+MONEY_TEXT,Деньги,Money
+HOSPITAL_TEXT,"Больница №9 Новогрудского района | Прием жителей деревни ""Курия""","Hospital №9 of the Novogrudok District | Reception of village ""Kyria"" residents"
+CREDITS_BUTTON,Кредиты,Credits
+MYBALANCE_BUTTON,Мой Баланс,My Balance
+ROOSTERBANKHELLO_TEXT,Вас приветствует ПетухБанк,Welcome to RoosterBank!
+TAKECREDIT_TEXT,Взять Кредит,Take a credit
+CREDITINFO_TEXT,Информация о кредите,Credit Info
+ROOSTERBANKCREDITS_TEXT,ПетухБанк -> Кредиты,RoosterBank -> Credits
+BACK_BUTTON,Назад,Back
+ROOSTERBANKMYBALANCE_TEXT,ПетухБанк -> Мой Баланс,RoosterBank -> My Balance
+MYBALANCE_TEXT,Ваш Баланс:,Your Balance:
+COINS_TEXT,Рублей,USD
+DRIP_TEXT,Счет за Капельницу: 50 Рублей,Bill for drip: 50 USD
+BUYCORN_BUTTON,Купить Кукурузу(30 Рублей),Buy corn(30 USD)
+BUYWHEAT_BUTTON,Купить Пшеницу(60 Рублей),Buy wheat(60 USD)
+BUYCOMPOUND3_BUTTON,Купить Комбикорм К-3(90 Рублей),Buy compound food K-3(90 USD)
+BUYCOMPOUND2_BUTTON,Купить Комбикорм К-2(120 Рублей),Buy compound food K-2(120 USD)
+BUYCOMPOUND1_BUTTON,Купить комбикорм К-1(150 Рублей),Buy compound food K-1(150 USD)
+BUYDRYRAT_BUTTON,Купить Сухой Паек(3 Рубля),Buy Dry Rations(3 USD)
+BUYPASTASOSISKI_BUTTON,Купить Макароны с сосисками(5 Рублей),Buy Pasta with Sausages(5 USD)
+BUYSTEWPASTA_BUTTON,Купить Тушенку с макаронами(7 Рублей),Buy stewed meat with pasta (7 USD)
+BUYSTEWPOTATO_BUTTON,Купить Тушенку с картошкой(10 Рублей),Buy stew with potato(10 USD)
+BUYBELYASH_BUTTON,Купить Беляш(15 Рублей),Buy Belyash(15 USD)
+BOUGHTBELYASH_TEXT,Успешно куплен и съеден беляш сытость стала: ,Sucсessefull bought and eaten belyash satiety became: 
+BOUGHTSTEWPOTATO_TEXT,Успешно куплены и съедены картошка с тушенкой сытость стала: ,Sucсessefull bought and eaten stew with potato satiety became: 
+BOUGHTSTEWPASTA_TEXT,Успешно куплены и съедены макароны с тушенкой сытость стала: ,Sucсessefull bought and eaten stew with pasta satiety became: 
+BOUGHTSAUSAGESPASTA_TEXT,Успешно куплены и съедены макароны с сосисками сытость стала: ,Sucсessefull bought and eaten sausages with pasta satiety became: 
+BOUGHTDRYRAT_TEXT,Успешно куплен и съеден сухой паек сытость стала: ,Sucсessefull bought and eaten dry rations satiety became: 
+CHICKENEAT_TAB,Еда для курей,Eat for Chickens
+BROILERREST_TAB,Бройлерский Ресторан,Broiler Restoraunt
+ROOSTERBANKCREDITINFO_TEXT,ПетухБанк -> Кредиты -> Информация о кредите,RoosterBank -> Credits -> Credit Info
+CREDITTAKED_TEXT,Кредит Взят: ,Credit Taked: 
+CREDITSUMM_TEXT,Сумма Кредита: ,Credit Summ: 
+CREDITSUMMREMAINING_TEXT,Осталось Выплатить: ,Remaining: 
+YES_TEXT,Да,Yes
+NO_TEXT,Нет,No
+WRITTENOFF_TEXT,Списано,Writen off
+ROOSTERBANKPUSH_TEXT,КуроГрамм: ПетухБанк - Push-уведомление,Chickengram: RoosterBank — Push-notification
+BOUGHTWHEAT_TEXT,Успешно куплена пшеница запас стал:,Successfully bought wheat stock became:
+BOUGHTCORN_TEXT,Успешно куплена кукуруза запас стал: ,Successfully bought corn stock became:
+BOUGHTCOMPOUND3_TEXT,Успешно куплен комбикорм К-3 запас стал:,Successfully bought compound food K-3 stock became:
+BOUGHTCOMPOUND2_TEXT,Успешно куплен комбикорм К-2 запас стал: ,Successfully bought compound food K-2 stock became: 
+BOUGHTCOMPOUND1_TEXT,Успешно куплен комбикорм К-1 запас стал:,Successfully bought compound food K-1 stock became:
+NOENOUGHMONEY_TEXT,Недостаточно денег осталось ещё %s рублей,No enough money remaining %s USD
+ENTERSUMM_TEXT,Введите сумму,Enter summ
+CONFIRM_BUTTON,Подтвердить,Accept
+ROOSTERBANKTAKECREDIT_TEXT,ПетухБанк -> Кредиты -> Взять Кредит,RoosterBank -> Credits -> Take a Credit
+KASSLABEL_TEXT,Яйца: %d | Запрос Яиц: %d | Деньги: %d,Eggs: %d | Eggs Request: %d | Money: %d
+SELLEGGS_TEXT,Продать Яйца,Sell Eggs
+SELLED_TEXT,Успешно продано!,Selled Successfull!
+NOENOUGHEGGS_TEXT,Недостаточно Яиц!,No Enough Eggs!
+UNLOAD_TEXT,Разгрузка Еды,Unloading Food
+ENTERWEIGHT_TEXT,Введите Количество(КГ),Enter Amount (KG)
+WHEAT_TEXT,Пшеница,Wheat
+CORN_TEXT,Кукуруза,Corn
+COMPOUND3_TEXT,Комбикорм К-3,Compound food K-3
+COMPOUND2_TEXT,Комбикорм К-2,Compound food K-2
+COMPOUND1_TEXT,Комбикорм К-1,Compound food K-1
+FN_NASETKA_TEXT,Насетка,Brood-hen
+FN_KLUSHA_TEXT,Клуша,Cluck-hen
+FN_TSYPA_TEXT,Цыпа,Chick
+FN_PESTRUSHKA_TEXT,Пеструшка,Dappled
+FN_RYABA_TEXT,Ряба,Speckled
+LN_GALINA_TEXT,Галина,Galina
+LN_ZINA_TEXT,Зина,Zina
+LN_MARFA_TEXT,Марфа,Marfa
+LN_TAMARA_TEXT,Тамара,Tamara
+LN_ELENA_TEXT,Елена,Elena
+STATUS_CORN_TEXT,Люблю кукурузу,I love corn
+STATUS_SPONSOR_TEXT,Ищу спонсора с К-1,Looking for a sponsor with K-1
+STATUS_BARN_TEXT,Зависаю у Сарая,Hanging out near the Barn
+STATUS_EGGS_TEXT,Сношу яйца на 5 р./кг,Laying eggs for 5 USD/kg
+LIKECOST_TEXT,Цена лайка: %d,Like cost: %d
+LANG_TEXT,Язык,Language
+MENU_BUTTON,В меню,Go menu

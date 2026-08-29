@@ -67,7 +67,8 @@ margin_left = -182.0
 margin_top = -36.0
 custom_colors/font_color = Color( 1, 1, 1, 0.572549 )
 custom_fonts/font = ExtResource( 1 )
-text = "v1.0.0 Release"
+text = "v1.0.1 Release"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_start"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_settings"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_quit"]

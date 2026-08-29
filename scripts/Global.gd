@@ -1,5 +1,6 @@
 extends Node
 
+var custom_theme: Theme = Theme.new()
 var eggs = 0  # Баланс яиц
 var satiety = 100 # Сытость фермера
 var money = 0  # Деньги
@@ -15,12 +16,10 @@ var player_may_move = true
 var player_arrest_time = 0
 var player_arrested = false
 var chiken_tinder_posts = [
-	{"name":"Насетка Галина", "about":"Люблю Кукурузу", "like_cost":50, "id":3},
-	{"name":"Насетка Ряба", "about":"Люблю Пшеницу", "like_cost":70, "id":4}
 ]
-var chicken_first_names = ["Насетка", "Клуша", "Цыпа", "Пеструшка", "Ряба"]
-var chicken_last_names = ["Галина", "Зина", "Марфа", "Тамара", "Елена"]
-var chicken_statuses = ["Люблю кукурузу", "Ищу спонсора с К-1", "Зависаю у Сарая", "Сношу яйца на 5 р./кг"]
+var chicken_first_names 
+var chicken_last_names
+var chicken_statuses
 var now_like_cost = 50 # Сколько сейчас стоит курица
 var last_chicken_id
 var in_credit: bool = false
@@ -28,6 +27,10 @@ var rooster_bank_prison_timer = 0
 var credit_summ = {"remaining":0, "start":0}
 var window = AcceptDialog.new()
 func _ready():
+	OS.set_window_title(tr("GAME_NAME"))
+	chicken_first_names = [tr("FN_NASETKA_TEXT"), tr("FN_KLUSHA_TEXT"), tr("FN_TSYPA_TEXT"), tr("FN_PESTRUSHKA_TEXT"), tr("FN_RYABA_TEXT")]
+	chicken_last_names = [tr("LN_GALINA_TEXT"), tr("LN_ZINA_TEXT"), tr("LN_MARFA_TEXT"), tr("LN_TAMARA_TEXT"), tr("LN_ELENA_TEXT")]
+	chicken_statuses = [tr("STATUS_CORN_TEXT"), tr("STATUS_SPONSOR_TEXT"), tr("STATUS_BARN_TEXT"), tr("STATUS_EGGS_TEXT")]
 	# Хакерский спавн узла прямо в оперативку без ручного создания на сценах! [321.1]
 	fade_screen = ColorRect.new()
 	fade_screen.color = Color(0, 0, 0, 0) # Полностью прозрачный чёрный [377.1]
@@ -41,8 +44,7 @@ func _ready():
 	canvas.add_child(fade_screen)
 	add_child(canvas)
 	# --- Окно - РАБОТА СО ШРИФТОМ ЧЕРЕЗ ТЕМУ ---
-	var custom_theme = Theme.new()
-	var font_res = load("res://Roboto_font.tres")
+	var font_res = load("res://fonts/Roboto_font.tres")
 
 	# 1. Меняем шрифт заголовка (для класса WindowDialog)
 	custom_theme.set_font("title_font", "WindowDialog", font_res)
@@ -70,8 +72,6 @@ func _ready():
 	# Подключаем таймер к нашей функции каждую секунду
 	timer.connect("timeout", self, "_update")
 	rooster_bank_timer.connect("timeout", self, "credit_pay")
-	# ТО САМОЕ ИСПРАВЛЕНИЕ: Жёстко запускаем таймер вручную!
-	timer.start() 
 func _update():
 	if get_tree().current_scene and not get_tree().current_scene.filename == "res://Menu.tscn":
 		for chicken in chickens.values():
@@ -85,7 +85,7 @@ func _update():
 			satiety = 100.0
 			if player_arrest_time <= 0:
 				player_arrested = false
-				get_tree().change_scene("res://Street.tscn")
+				get_tree().change_scene("res://scenes/Street.tscn")
 		if len(chiken_tinder_posts) < 10:
 			generate_chicken_tinder_post()
 func _process(_delta):
@@ -142,7 +142,7 @@ func arrest(time):
 	add_child(sound_player)
 	
 	# Загрузка MP3 файла
-	var music = load("res://sound/police.mp3")
+	var music = load("res://sounds/police.mp3")
 	sound_player.stream = music
 	
 	sound_player.play()
@@ -163,7 +163,7 @@ func arrest(time):
 		fade_screen.color.a += 0.05
 		yield(get_tree().create_timer(0.05), "timeout")
 	
-	get_tree().change_scene("res://Prison.tscn")
+	get_tree().change_scene("res://scenes/Prison.tscn")
 	for i in range(20):
 		fade_screen.color.a -= 0.05
 		yield(get_tree().create_timer(0.05), "timeout")
@@ -217,3 +217,13 @@ func clear_credit():
 	credit_summ["remaining"] = 0
 	in_credit = false
 	rooster_bank_prison_timer = 0
+func rooster_bank_push(text):
+	window.window_title = tr("ROOSTERBANKPUSH_TEXT")
+	window.dialog_text = text
+	window.popup_centered()
+func _update_languages():
+	OS.set_window_title(tr("GAME_NAME"))
+	chicken_first_names = [tr("FN_NASETKA_TEXT"), tr("FN_KLUSHA_TEXT"), tr("FN_TSYPA_TEXT"), tr("FN_PESTRUSHKA_TEXT"), tr("FN_RYABA_TEXT")]
+	chicken_last_names = [tr("LN_GALINA_TEXT"), tr("LN_ZINA_TEXT"), tr("LN_MARFA_TEXT"), tr("LN_TAMARA_TEXT"), tr("LN_ELENA_TEXT")]
+	chicken_statuses = [tr("STATUS_CORN_TEXT"), tr("STATUS_SPONSOR_TEXT"), tr("STATUS_BARN_TEXT"), tr("STATUS_EGGS_TEXT")]
+	chiken_tinder_posts.clear()

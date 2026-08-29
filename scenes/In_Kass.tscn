@@ -19,7 +19,7 @@ anchor_bottom = 1.0
 margin_top = -88.0
 margin_right = 264.0
 custom_fonts/font = ExtResource( 1 )
-text = "Продать Яйца"
+text = "SELLEGGS_TEXT"
 
 [node name="Control" type="Control" parent="."]
 margin_left = 271.0
@@ -49,7 +49,7 @@ anchor_right = 1.0
 margin_left = -175.0
 margin_bottom = 70.0
 custom_fonts/font = ExtResource( 1 )
-text = "Выход"
+text = "QUIT_BUTTON"
 
 [connection signal="pressed" from="Button" to="." method="_sell_eggs"]
 [connection signal="pressed" from="Out" to="." method="out"]
