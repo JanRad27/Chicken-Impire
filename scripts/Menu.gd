@@ -15,4 +15,4 @@ func _start():
 func _quit():
 	get_tree().quit()
 func _settings():
-	get_tree().change_scene("res://Settings.tscn")
+	get_tree().change_scene("res://scenes/Settings.tscn")

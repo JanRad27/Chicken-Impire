@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://images/Grass.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Farmer.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://images/up.png" type="Texture" id=9]
 [ext_resource path="res://scenes/Barn.tscn" type="PackedScene" id=10]
 [ext_resource path="res://images/use.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Fox.tscn" type="PackedScene" id=12]
 
 [node name="Street" type="Control"]
 anchor_right = 1.0
@@ -81,3 +82,6 @@ scale = Vector2( 0.479167, 0.541667 )
 normal = ExtResource( 11 )
 action = "action-use"
 visibility_mode = 1
+
+[node name="Fox" parent="." instance=ExtResource( 12 )]
+position = Vector2( 261, 227 )
