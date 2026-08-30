@@ -39,7 +39,7 @@ func confirm_credit():
 		$Credits/AddCredit.hide()
 		Global.add_credit(summ, 50)
 func _process(delta):
-	$Credits/Info.dialog_text = ("Кредит взят: " + (tr("YES_TEXT") + "\n" if Global.in_credit else tr("NO_TEXT") + "\n")) + tr("CREDITSUMM_TEXT") + str(Global.credit_summ["start"]) + "\n" +tr("CREDITSUMMREMAINING_TEXT") " + str(Global.credit_summ["remaining"])
+	$Credits/Info.dialog_text = (tr("CREDITTAKED_TEXT") + (tr("YES_TEXT") + "\n" if Global.in_credit else tr("NO_TEXT") + "\n")) + tr("CREDITSUMM_TEXT") + str(Global.credit_summ["start"]) + "\n" +tr("CREDITSUMMREMAINING_TEXT") + str(Global.credit_summ["remaining"])
 	$"My Balance/Balance".text = tr("MYBALANCE_TEXT") + " " + str(Global.money) + " " + tr("COINS_TEXT")
 func show_credit():
 	$Credits/Info.popup_centered()

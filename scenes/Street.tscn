@@ -20,7 +20,7 @@ script = ExtResource( 6 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 1024, 800 )
+motion_mirroring = Vector2( 2000, 2000 )
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
 anchor_right = 1.0
@@ -35,7 +35,7 @@ stretch_mode = 2
 position = Vector2( 229, 531 )
 
 [node name="Farmer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 229, 670 )
+position = Vector2( 234, 669 )
 
 [node name="Kass" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1571, 420 )

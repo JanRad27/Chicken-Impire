@@ -73,7 +73,7 @@ func _ready():
 	timer.connect("timeout", self, "_update")
 	rooster_bank_timer.connect("timeout", self, "credit_pay")
 func _update():
-	if get_tree().current_scene and not get_tree().current_scene.filename == "res://Menu.tscn":
+	if get_tree().current_scene and not get_tree().current_scene.filename == "res://scenes/Menu.tscn":
 		for chicken in chickens.values():
 			if chicken["satiety"] > 0:
 				chicken["satiety"] -= 1 
@@ -89,7 +89,7 @@ func _update():
 		if len(chiken_tinder_posts) < 10:
 			generate_chicken_tinder_post()
 func _process(_delta):
-	if get_tree().current_scene and not get_tree().current_scene.filename == "res://Menu.tscn":
+	if get_tree().current_scene and not get_tree().current_scene.filename == "res://scenes/Menu.tscn":
 		# Растягиваем его под разрешение экрана твоего ноутбука Acer [221.1, 395.1]
 		if fade_screen:
 			fade_screen.rect_size = get_viewport().size
@@ -126,7 +126,7 @@ func fade():
 	satiety = 100.0 # Подлечили капельницей
 	
 	# Телепортируем игрока в больницу из любой точки мира! [471.1, 478.1]
-	get_tree().change_scene("res://Hospital.tscn")
+	get_tree().change_scene("res://scenes/Hospital.tscn")
 	
 	# Плавно делаем экран обратно прозрачным на койке [471.1]
 	yield(get_tree().create_timer(0.5), "timeout")
@@ -137,6 +137,9 @@ func pay(points):
 	money -= points
 func arrest(time):
 	player_may_move = false
+	var player = get_tree().get_root().get_node_or_null("BackgroundMusicServer")
+	if player:
+		player.stop()
 	
 	var sound_player = AudioStreamPlayer.new()	
 	add_child(sound_player)
@@ -168,6 +171,7 @@ func arrest(time):
 		fade_screen.color.a -= 0.05
 		yield(get_tree().create_timer(0.05), "timeout")
 	player_may_move = true
+	player.play()
 
 func generate_chicken_tinder_post():
 	if last_chicken_id == null:
@@ -211,13 +215,14 @@ func add_credit(summ, add_procent):
 	window.window_title = "КуроГрамм: ПетухБанк - Сообщение"
 	window.dialog_text = "Внимание! Вы взяли кредит на сумму " + str(summ) + " рублей, вернете "  + str(summ_true) + " рублей! Если это не вы обратитесь в поддержку."
 	window.popup_centered()
-	yield(window, "popup_hide")
 func clear_credit():
 	credit_summ["start"] = 0
 	credit_summ["remaining"] = 0
 	in_credit = false
 	rooster_bank_prison_timer = 0
 func rooster_bank_push(text):
+	if window.visible:
+		yield(window, "popup_hide")
 	window.window_title = tr("ROOSTERBANKPUSH_TEXT")
 	window.dialog_text = text
 	window.popup_centered()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://fonts/Roboto_font_Big.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/Menu.gd" type="Script" id=2]
+[ext_resource path="res://scripts/BackgroundPlayer.gd" type="Script" id=3]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -67,7 +68,13 @@ margin_left = -182.0
 margin_top = -36.0
 custom_colors/font_color = Color( 1, 1, 1, 0.572549 )
 custom_fonts/font = ExtResource( 1 )
-text = "v1.0.1 Release"
+text = "v1.0.2 Release"
+
+[node name="BackgroundMusicServer" type="Node" parent="."]
+script = ExtResource( 3 )
+audio = "res://sounds/Music.mp3"
+volume = 1
+auto_play = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_start"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_settings"]

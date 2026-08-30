@@ -88,3 +88,4 @@ STATUS_EGGS_TEXT,Сношу яйца на 5 р./кг,Laying eggs for 5 USD/kg
 LIKECOST_TEXT,Цена лайка: %d,Like cost: %d
 LANG_TEXT,Язык,Language
 MENU_BUTTON,В меню,Go menu
+REMAINING_TEXT,Остаток: ,Remaining: 

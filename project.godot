@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "BackgroundMusicServer",
+"language": "GDScript",
+"path": "res://scripts/BackgroundPlayer.gd"
+} ]
+_global_script_class_icons={
+"BackgroundMusicServer": "res://images/Player.png"
+}
+
 [application]
 
 config/name="Куриная Империя"
