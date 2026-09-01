@@ -12,7 +12,6 @@ radius = 277.0
 [node name="Fox" type="KinematicBody2D"]
 position = Vector2( 100, 100 )
 script = ExtResource( 2 )
-speed = null
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -8, -28 )
@@ -38,3 +37,4 @@ position = Vector2( 4, 6 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="DetectionArea" to="." method="detected"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_undetect"]

@@ -23,6 +23,7 @@ _global_script_class_icons={
 config/name="Куриная Империя"
 run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://images/King_Chicken.png"
+config/=false
 
 [autoload]
 

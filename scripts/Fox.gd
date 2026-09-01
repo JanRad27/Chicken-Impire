@@ -1,15 +1,23 @@
 extends KinematicBody2D
 
-export(int) var speed = 150
+export(int) var speed = 200
 var velocity = Vector2.ZERO
+var escaping: bool = false
 
 func _ready():
 	pass
 
+func _process(delta):
+	velocity = Vector2.ZERO
+	if escaping:
+		velocity.x += speed
+	
+	move_and_slide(velocity)
+		
+		
+
 func detected(body):
-	print("Лиса: Что-то обноружено")
-	if "Chicken" in body.name:
-		print("Лиса: курица обнаружена!")
+	if "Chicken" in body.name and not "GigaChicken" in body.name:
 		$DetectionArea.disconnect("body_entered", self, "detected")
 		$AngryBar.visible = true
 		for tick in range(100):
@@ -32,8 +40,11 @@ func detected(body):
 			body.kill()
 		$AngryBar.value = 0
 		$DetectionArea.connect("body_entered", self, "detected")
-	elif body.name = "ChickenGigachad":
-		pass
-
+	elif body.name == "GigaChicken":
+		escaping = true
+func _undetect(body):
+	if "GigaChicken" in body.name:
+		yield(get_tree().create_timer(5.0), "timeout")
+		escaping = false
 
 

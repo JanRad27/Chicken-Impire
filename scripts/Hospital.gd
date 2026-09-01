@@ -13,7 +13,7 @@ func _ready():
 
 func out(body):
 	if body.name == "Farmer":
-		get_tree().change_scene("res://Street.tscn")
+		get_tree().change_scene("res://scenes/Street.tscn")
 
 func _pay():
 	if int(Global.money) >= 50:
