@@ -9,7 +9,7 @@ func _ready():
 		var new_post = post_scene.instance()
 		$Scroll/VBoxContainer.add_child(new_post)
 		new_post.rect_min_size = Vector2(200, 200)
-		new_post.setup_card(post["name"], post["id"], post["about"], post["like_cost"])
+		new_post.setup_card(post["name"], post["id"], post["about"], post["like_cost"], post["type"])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,7 +23,7 @@ func _process(delta):
 		$Scroll/VBoxContainer.add_child(new_post)
 		
 		# Задаем данные Галине или Пете на лету!
-		new_post.setup_card(fresh_data["name"], fresh_data["id"], fresh_data["about"], fresh_data["like_cost"])
+		new_post.setup_card(fresh_data["name"], fresh_data["id"], fresh_data["about"], fresh_data["like_cost"], fresh_data["type"])
 
 func _out():
 	get_tree().change_scene("res://scenes/PC.tscn")

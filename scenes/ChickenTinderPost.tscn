@@ -14,14 +14,16 @@ custom_constants/separation = 30
 script = ExtResource( 2 )
 chicken_name = "Насетка Галина"
 chicken_about = "Люблю кукурузу"
+type = "basic"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 200, 150 )
+size_flags_horizontal = 3
 texture = ExtResource( 1 )
 expand = true
-stretch_mode = 6
+stretch_mode = 4
 
 [node name="Name" type="Label" parent="."]
 margin_top = 180.0

@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/GigaChicken.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 106, 143 )
+extents = Vector2( 110.5, 139 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 666.311
@@ -13,12 +13,12 @@ radius = 666.311
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 45, -39 )
-scale = Vector2( 4.32292, 4.74479 )
+position = Vector2( 27.2499, -23.125 )
+scale = Vector2( 3.95313, 4.41406 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3, 46 )
+position = Vector2( 1.5, 50 )
 shape = SubResource( 1 )
 
 [node name="Vision" type="Area2D" parent="."]
@@ -27,3 +27,4 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="Vision" to="." method="_detect"]
+[connection signal="body_exited" from="Vision" to="." method="_undetect"]

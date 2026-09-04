@@ -84,8 +84,10 @@ normal = ExtResource( 11 )
 action = "action-use"
 visibility_mode = 1
 
-[node name="GigaChicken" parent="." instance=ExtResource( 13 )]
-position = Vector2( 442, 366 )
-
 [node name="Fox" parent="." instance=ExtResource( 12 )]
-position = Vector2( 371, 863 )
+position = Vector2( 1206, 867 )
+hole = NodePath("../GigaChicken")
+
+[node name="GigaChicken" parent="." instance=ExtResource( 13 )]
+position = Vector2( 763, 911 )
+base_position = Vector2( 50, 50 )

@@ -6,9 +6,9 @@ var satiety = 100 # Сытость фермера
 var money = 0  # Деньги
 var hugrying_speed = 0.3 # Скорость Голодания
 var chickens =  {
-	0:{"id":0, "name":"Галина", "satiety":100},
-	1:{"id":1, "name":"Ряба", "satiety":100},
-	2:{"id":2, "name":"Желтенькая", "satiety":100}
+	0:{"id":0, "name":"Галина", "satiety":100, "type":"basic"},
+	1:{"id":1, "name":"Ряба", "satiety":100, "type":"basic"},
+	2:{"id":2, "name":"Желтенькая", "satiety":100, "type":"basic"}
 } # Курицы
 var fade_screen: ColorRect
 var total_stored = {"corn":0, "wheat":0, "compound_feed_k3":0, "compound_feed_k2":0, "compound_feed_k1":0} # Запас еды кур в сарае
@@ -25,7 +25,55 @@ var last_chicken_id
 var in_credit: bool = false
 var rooster_bank_prison_timer = 0
 var credit_summ = {"remaining":0, "start":0}
-var window = AcceptDialog.new()
+var window: AcceptDialog = AcceptDialog.new()
+var chicken_types: Array = [
+	"basic", # Несушка
+	"giga" # Цыпа-гигачад
+]
+class time:
+	var value: Dictionary
+	func _init(seconds: int, minutes: int, hours: int):
+		self.value = {"seconds":seconds, "minutes":minutes, "hours":hours}
+	func _to_string():
+		return str(value["seconds"]) + ":" + str(value["minutes"]) + ":" + str(value["hours"])
+	func get_time_array():
+		return str(self).split(":")
+	func add(seconds: int):
+		# 1. Складываем новые секунды с текущими
+		var total_seconds = seconds + self.value["seconds"]
+		
+		# 2. Переносим лишние секунды в минуты
+		var extra_minutes = total_seconds / 60
+		total_seconds = total_seconds % 60
+		
+		# 3. Прибавляем текущие минуты + новые минуты из секунд
+		var total_minutes = self.value["minutes"] + extra_minutes
+		
+		# 4. Переносим лишние минуты в часы (Исправлено: берем часы из value["hours"])
+		var extra_hours = total_minutes / 60
+		total_minutes = total_minutes % 60
+		
+		# 5. Считаем итоговые часы
+		var total_hours = self.value["hours"] + extra_hours
+		
+		if total_hours < 24:
+			# Записываем обновленный словарь
+			self.value = {
+				"seconds": total_seconds, 
+				"minutes": total_minutes, 
+				"hours": total_hours
+			}
+		else:
+			# Обнуляем!
+			self.value = {
+				"seconds": 0, 
+				"minutes": 0, 
+				"hours": 0
+			}
+		
+
+var game_time: time = time.new(0, 0, 13)
+			
 func _ready():
 	OS.set_window_title(tr("GAME_NAME"))
 	chicken_first_names = [tr("FN_NASETKA_TEXT"), tr("FN_KLUSHA_TEXT"), tr("FN_TSYPA_TEXT"), tr("FN_PESTRUSHKA_TEXT"), tr("FN_RYABA_TEXT")]
@@ -74,8 +122,9 @@ func _ready():
 	rooster_bank_timer.connect("timeout", self, "credit_pay")
 func _update():
 	if get_tree().current_scene and not get_tree().current_scene.filename == "res://scenes/Menu.tscn":
+		game_time.add(1800)
 		for chicken in chickens.values():
-			if chicken["satiety"] > 0:
+			if chicken["satiety"] > 0 and chicken["type"] in ["basic",]:
 				chicken["satiety"] -= 1 
 				eggs += 1
 		if not player_arrested:
@@ -114,6 +163,25 @@ func _process(_delta):
 			arrest(true_summ)
 		if credit_summ["remaining"] <= 0 and in_credit:
 			clear_credit()
+		var hours = int(game_time.get_time_array()[2])
+		print(hours)
+		if not get_tree().current_scene.filename in ["res://scenes/In_Kass.tscn", "res://scenes/Hospital.tscn", "res://scenes/House_in.tscn", "res://scenes/PC.tscn"]:
+			if hours >= 0 and hours < 5:
+				fade_screen.color = Color(0, 0, 0, 0.95)
+			elif hours >= 5 and hours < 7:
+				fade_screen.color = Color(0, 0, 0, 0.80)
+			elif hours >= 7 and hours < 13:
+				fade_screen.color = Color(0, 0, 0, 0.50)
+			elif hours >= 13 and hours < 17:
+				fade_screen.color = Color(0, 0, 0, 0)
+			elif hours >= 17 and hours < 20:
+				fade_screen.color = Color(0, 0, 0, 0.50)
+			elif hours >= 20 and hours < 22:
+				fade_screen.color = Color(0, 0, 0, 0.80)
+			else:
+				fade_screen.color = Color(0, 0, 0, 0.95)
+		else:
+			fade_screen.color = Color(0, 0, 0, 0)
 func hungry_farmer(points):
 	satiety -= points
 func fade():
@@ -184,14 +252,18 @@ func generate_chicken_tinder_post():
 	var chicken_id = last_chicken_id + 1
 	var chicken_cost = now_like_cost
 	var random_generator = RandomNumberGenerator.new()
+	var type
 	random_generator.randomize()
 	chicken_first_name = chicken_first_names[random_generator.randi_range(0, len(chicken_first_names) - 1)]
 	random_generator.randomize()
 	chicken_last_name = chicken_last_names[random_generator.randi_range(0, len(chicken_last_names) - 1)]
+	random_generator.randomize()
 	chicken_name = chicken_first_name + " " + chicken_last_name
 	chicken_status = chicken_statuses[random_generator.randi_range(0, len(chicken_statuses) - 1)]
+	random_generator.randomize()
+	type = chicken_types[random_generator.randi_range(0, len(chicken_types) - 1)]
 	# Формируем словарь для chicken_tinder_posts
-	var post = {"name":chicken_name, "about":chicken_status, "id":chicken_id, "like_cost":chicken_cost}
+	var post = {"name":chicken_name, "about":chicken_status, "id":chicken_id, "like_cost":chicken_cost, "type":type}
 	# Завершение: Добавляем анкету и повышаем цену следующей куры на 10 руб.
 	chiken_tinder_posts.append(post)
 	now_like_cost += 10

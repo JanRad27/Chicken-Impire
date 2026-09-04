@@ -89,3 +89,4 @@ LIKECOST_TEXT,Цена лайка: %d,Like cost: %d
 LANG_TEXT,Язык,Language
 MENU_BUTTON,В меню,Go menu
 REMAINING_TEXT,Остаток: ,Remaining: 
+TIME_TEXT,Время: %d:%d,Time: %d:%d

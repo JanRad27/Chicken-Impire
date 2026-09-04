@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export(int) var speed = 200
+export(NodePath) var hole
 var velocity = Vector2.ZERO
 var escaping: bool = false
 

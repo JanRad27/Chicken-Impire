@@ -3,9 +3,15 @@ export(int) var speed = 120
 var target: Vector2 = Vector2(500, 500)
 var velocity: Vector2 = Vector2.ZERO
 var fox_in_vision: Dictionary = {"in_vision":false, "fox":null}
+export(Vector2) var base_position
 
 func _ready():
-	pass
+	var pos_update_timer = Timer.new()
+	pos_update_timer.wait_time = 5.0
+	pos_update_timer.autostart = true
+	add_child(pos_update_timer)
+	
+	pos_update_timer.connect("timeout", self, "update_pos")
 	
 func _process(delta):
 	velocity = Vector2.ZERO
@@ -26,6 +32,9 @@ func _detect(body):
 		fox_in_vision = {"in_vision":true, "fox":body}
 func _undetect(body):
 	if "Fox" in body.name:
-		target = global_position
+		target = Vector2.ZERO
 		fox_in_vision = {"in_vision":false, "fox":null}
+func update_pos():
+	if not fox_in_vision["in_vision"]:
+		target = base_position
 		
