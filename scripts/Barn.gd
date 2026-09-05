@@ -10,22 +10,28 @@ func _ready():
 	$ULLayer/ULMenu/VBoxContainer/ItemList.set_item_text(2, tr("COMPOUND3_TEXT"))
 	$ULLayer/ULMenu/VBoxContainer/ItemList.set_item_text(3, tr("COMPOUND2_TEXT"))
 	$ULLayer/ULMenu/VBoxContainer/ItemList.set_item_text(4, tr("COMPOUND1_TEXT"))
+	Debug.add_log("Barn object ready!")
 func _collect(body):
 	if "Bug_Corn" in body.name:
 		Global.total_stored["corn"] += body.eat_count_kg
 		body.queue_free()
+		Debug.add_log("Collected corn to barn!")
 	elif "Bug_Wheat" in body.name:
 		Global.total_stored["wheat"] += body.eat_count_kg
 		body.queue_free()
+		Debug.add_log("Collected wheat to barn!")
 	elif "Bug_Compound_Food_k1" in body.name:
 		Global.total_stored["compound_feed_k1"] += body.eat_count_kg
 		body.queue_free()
+		Debug.add_log("Collected compound food k-1 to barn!")
 	elif "Bug_Compound_Food_k2" in body.name:
 		Global.total_stored["compound_feed_k2"] += body.eat_count_kg
 		body.queue_free()
+		Debug.add_log("Collected compound food k-2 to barn!")
 	elif "Bug_Compound_Food_k3" in body.name:
 		Global.total_stored["compound_feed_k3"] += body.eat_count_kg
 		body.queue_free()
+		Debug.add_log("Collected compound food k-3 to barn!")
 func _lever_active(body):
 	if body.name == "Farmer":
 	 lever_use_active = true
@@ -36,6 +42,7 @@ func _process(delta):
 	if Input.is_action_pressed("action-use") and lever_use_active:
 		$ULLayer/ULMenu.popup_centered()
 		Global.player_may_move = false
+		Debug.add_log("Barn lever used!")
 func _validate_input_num(new_text, el_path):
 	var valid_text = []
 	for el in new_text:
@@ -45,6 +52,7 @@ func _validate_input_num(new_text, el_path):
 	var node = get_node(el_path)
 	node.text = valid_string
 	node.caret_position = len(valid_string)
+	Debug.add_log("Input of eat unloading count validated!")
 func _on_ULwindow_hidden():
 	Global.player_may_move = true
 func _hide_ULwindow_and_unload():
@@ -56,6 +64,7 @@ func _hide_ULwindow_and_unload():
 	if eat_count_kg  == "":
 		# Если пользователь не ввел количество еды то пишем ему об этом и выходим из функции(Чтобы окно не скрылось и разгрузка не выдала ошибку) 
 		window.get_node("VBoxContainer/Error").text = "Введите Количество!"
+		Debug.add_log("Eat unloading error: Count is empty!")
 		return
 	# Преобразование количества еды в int 
 	eat_count_kg = int(eat_count_kg)
@@ -82,33 +91,38 @@ func unload_eat(type, count):
 				Global.total_stored["wheat"] -= count
 				bag = bags["wheat"].instance()
 			else:
+				Debug.add_log("Eat unloading error: No enough eat!")
 				return "No enough"
 		elif type == 1:
 			if Global.total_stored["corn"] >= count:
 				Global.total_stored["corn"] -= count
 				bag = bags["corn"].instance()
 			else:
+				Debug.add_log("Eat unloading error: No enough eat!")
 				return "No enough"
 		elif type == 2:
 			if Global.total_stored["compound_feed_k3"] >= count:
 				Global.total_stored["compound_feed_k3"] -= count
 				bag = bags["compound_k3"].instance()
 			else:
+				Debug.add_log("Eat unloading error: No enough eat!")
 				return "No enough"
 		elif type == 3:
 			if Global.total_stored["compound_feed_k2"] >= count:
 				Global.total_stored["compound_feed_k2"] -= count
 				bag = bags["compound_k2"].instance()
 			else:
+				Debug.add_log("Eat unloading error: No enough eat!")
 				return "No enough"
 		elif type == 4:
 			if Global.total_stored["compound_feed_k1"] >= count:
 				Global.total_stored["compound_feed_k1"] -= count
 				bag = bags["compound_k1"].instance()
 			else:
+				Debug.add_log("Eat unloading error: No enough eat!")
 				return "No enough"
 		else:
-			print(type)
+			Debug.add_log("Eat unloading error: Unknown type!")
 			return
 		var farmer = street_node.get_node_or_null("Farmer")
 		if bag and farmer:
@@ -121,6 +135,6 @@ func unload_eat(type, count):
 		else:
 			return 
 	else:
-		print("Street node сейчас Null")
+		Debug.add_log("Eat unloading error: Street node not detected")
 			
 		

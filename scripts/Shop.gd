@@ -10,9 +10,12 @@ func buy_corn():
 			
 		special_label.text = tr("BOUGHTCORN_TEXT") +  str(Global.total_stored["corn"])
 		special_label.visible = true
+		Debug.add_log("Corn buyed! Money remaining: " + str(Global.money)) 
 	else:
 		special_label.text = tr("NOENOUGHMONEY_TEXT") % (30 - Global.money)
 		special_label.visible = true
+		Debug.add_log("No enough money to buy corn!")
+	
 		
 func buy_wheat():
 	if Global.money >= 60:
@@ -22,10 +25,12 @@ func buy_wheat():
 			
 		special_label.text = tr("BOUGHTWHEAT_TEXT") + str(Global.total_stored["wheat"])
 		special_label.visible = true
+		Debug.add_log("Wheat buyed! Money remaining: " + str(Global.money)) 
 	else:
 		special_label.text = tr("NOENOUGHMONEY_TEXT") % (60 - Global.money)
 		special_label.visible = true
-func buy_compound_feed(category):
+		Debug.add_log("No enough money to buy wheat!")
+func buy_compound_feed(category: int):
 	if category == 3:
 		if Global.money >= 90:
 			Global.money -= 90     # Не забываем забрать 90 яиц за покупку!
@@ -34,9 +39,11 @@ func buy_compound_feed(category):
 				
 			special_label.text = tr("BOUGHTCOMPOUND3_TEXT") + str(Global.total_stored["compound_feed_k3"])
 			special_label.visible = true
+			Debug.add_log("Compound food k-3 buyed! Money remaining: " + str(Global.money)) 
 		else:
 			special_label.text = tr("NOENOUGHMONEY_TEXT") % (90 - Global.money)
 			special_label.visible = true
+			Debug.add_log("No enough money to buy compound food k-3!")
 	if category == 2:
 		if Global.money >= 120:
 			Global.money -= 120     # Не забываем забрать 120 яиц за покупку!
@@ -45,9 +52,11 @@ func buy_compound_feed(category):
 				
 			special_label.text = tr("BOUGHTCOMPOUND2_TEXT") + str(Global.total_stored["compound_feed_k2"])
 			special_label.visible = true
+			Debug.add_log("Compound food k-2 buyed! Money remaining: " + str(Global.money)) 
 		else:
 			special_label.text = tr("NOENOUGHMONEY_TEXT") % (120 - Global.money)
 			special_label.visible = true
+			Debug.add_log("No enough money to buy compound food k-2!")
 	if category == 1:
 		if Global.money >= 150:
 			Global.money -= 150   # Не забываем забрать 150 яиц за покупку!
@@ -56,9 +65,12 @@ func buy_compound_feed(category):
 						
 			special_label.text = tr("BOUGHTCOMPOUND1_TEXT") + str(Global.total_stored["compound_feed_k1"])
 			special_label.visible = true
+			Debug.add_log("Compound food k-1 buyed! Money remaining: " + str(Global.money)) 
 		else:
 			special_label.text = tr("NOENOUGHMONEY_TEXT") % (150 - Global.money)
 			special_label.visible = true
+			Debug.add_log("No enough money to buy compound food k-1!")
+		
 func go_home():
 	get_tree().change_scene("res://scenes/PC.tscn")
 func buy_dry_rations():
@@ -72,9 +84,11 @@ func buy_dry_rations():
 		
 		special_label_eat.text = tr("BOUGHTDRYRAT_TEXT") + str(Global.satiety)
 		special_label_eat.visible = true
+		Debug.add_log("Dry rations buyed! Money remaining: " + str(Global.money)) 
 	else:
 		special_label_eat.text = tr("NOENOUGHMONEY_TEXT") % (3 - Global.money)
 		special_label_eat.visible = true
+		Debug.add_log("No enough money to buy dry rations!")
 func buy_pasta_sosiski():
 	if Global.money >= 5:
 		Global.money -= 5
@@ -86,9 +100,11 @@ func buy_pasta_sosiski():
 		
 		special_label_eat.text = tr("BOUGHTSAUSAGESPASTA_TEXT") + str(Global.satiety)
 		special_label_eat.visible = true
+		Debug.add_log("Sausages and pasta buyed! Money remaining: " + str(Global.money)) 
 	else:
 		special_label_eat.text = tr("NOENOUGHMONEY_TEXT") % (5 - Global.money)
 		special_label_eat.visible = true
+		Debug.add_log("No enough money to buy sausages and pasta!")
 
 func buy_pasta_tysenka():
 	if Global.money >= 7:
@@ -101,9 +117,11 @@ func buy_pasta_tysenka():
 		
 		special_label_eat.text = tr("BOUGHTSTEWPASTA_TEXT") + str(Global.satiety)
 		special_label_eat.visible = true
+		Debug.add_log("Stew and pasta buyed! Money remaining: " + str(Global.money)) 
 	else:
 		special_label_eat.text = tr("NOENOUGHMONEY_TEXT") % (7 - Global.money)
 		special_label_eat.visible = true
+		Debug.add_log("No enough money to buy stew and pasta!")
 func buy_potato_tysenka():
 	if Global.money >= 10:
 		Global.money -= 10
@@ -115,9 +133,11 @@ func buy_potato_tysenka():
 		
 		special_label_eat.text = tr("BOUGHTSTEWPOTATO_TEXT") + str(Global.satiety)
 		special_label_eat.visible = true
+		Debug.add_log("Stew and potato buyed! Money remaining: " + str(Global.money)) 
 	else:
 		special_label_eat.text = tr("NOENOUGHMONEY_TEXT") % (10 - Global.money)
 		special_label_eat.visible = true
+		Debug.add_log("No enough money to buy stew and potato!")
 func buy_belyash():
 	if Global.money >= 15:
 		Global.money -= 15
@@ -129,6 +149,10 @@ func buy_belyash():
 		
 		special_label_eat.text = tr("BOUGHTBELYASH_TEXT") + str(Global.satiety)
 		special_label_eat.visible = true
+		Debug.add_log("Belyash buyed! Money remaining: " + str(Global.money)) 
 	else:
 		special_label_eat.text = tr("NOENOUGHMONEY_TEXT") % (15 - Global.money)
 		special_label_eat.visible = true
+		Debug.add_log("No enough money to buy belyash!")
+func _ready():
+	Debug.add_log("EggTorg ready!")

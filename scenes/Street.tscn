@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://images/Grass.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Farmer.tscn" type="PackedScene" id=2]
@@ -11,8 +11,7 @@
 [ext_resource path="res://images/up.png" type="Texture" id=9]
 [ext_resource path="res://scenes/Barn.tscn" type="PackedScene" id=10]
 [ext_resource path="res://images/use.png" type="Texture" id=11]
-[ext_resource path="res://scenes/Fox.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/GigaChicken.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Fox hole.tscn" type="PackedScene" id=14]
 
 [node name="Street" type="Control"]
 anchor_right = 1.0
@@ -37,7 +36,7 @@ stretch_mode = 2
 position = Vector2( 229, 531 )
 
 [node name="Farmer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 234, 669 )
+position = Vector2( 233, 649 )
 
 [node name="Kass" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1571, 420 )
@@ -84,10 +83,6 @@ normal = ExtResource( 11 )
 action = "action-use"
 visibility_mode = 1
 
-[node name="Fox" parent="." instance=ExtResource( 12 )]
-position = Vector2( 1206, 867 )
-hole = NodePath("../GigaChicken")
-
-[node name="GigaChicken" parent="." instance=ExtResource( 13 )]
-position = Vector2( 763, 911 )
-base_position = Vector2( 50, 50 )
+[node name="Fox hole" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1751, 881 )
+rotation = -4.34412

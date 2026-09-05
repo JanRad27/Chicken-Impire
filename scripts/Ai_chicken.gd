@@ -17,6 +17,8 @@ func _ready():
 	
 	eating_timer.connect("timeout", self, "eat_grass")
 	
+	Debug.add_log("Chicken spawned!")
+	
 func eat_grass():
 	if my_data["satiety"] > 0 and not is_died:
 		$Sprite.texture = preload("res://images/Chicken-Eating-Grass.png")

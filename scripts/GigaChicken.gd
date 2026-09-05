@@ -13,6 +13,8 @@ func _ready():
 	
 	pos_update_timer.connect("timeout", self, "update_pos")
 	
+	Debug.add_log("GigaChicken spawned!")
+	
 func _process(delta):
 	velocity = Vector2.ZERO
 	if fox_in_vision["in_vision"]:

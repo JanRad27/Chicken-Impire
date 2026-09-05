@@ -10,6 +10,7 @@ func _ready():
 	var close_btn = $Pay.get_close_button()
 	if close_btn:
 		close_btn.connect("pressed", self, "decline_pay")
+	Debug.add_log("Hospital ready!")
 
 func out(body):
 	if body.name == "Farmer":
@@ -25,6 +26,5 @@ func _pay():
 		Global.rooster_bank_push(tr("WRITTENOFF_TEXT") + ": 50 " + tr("COINS_TEXT") + "\n" + tr("REMAINING_TEXT") + str(Global.money))
 func decline_pay():
 		Global.arrest(30)
-
-
-
+func _exit_tree():
+	Debug.add_log("Exited hospital!")

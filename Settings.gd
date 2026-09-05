@@ -15,6 +15,7 @@ func _ready():
 	}
 	var locale_num = nums[locale]
 	$ScrollContainer/VBoxContainer/OptionButton.select(locale_num)
+	Debug.add_log("Settings ready!")
 
 func _menu():
 	get_tree().change_scene("res://scenes/Menu.tscn")
@@ -30,3 +31,4 @@ func _change_language(index):
 	elif index == 1:
 		TranslationServer.set_locale("en")
 	Global._update_languages()
+	Debug.add_log("Language switched to: " + str(index))

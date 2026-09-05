@@ -10,6 +10,7 @@ func _ready():
 		$Scroll/VBoxContainer.add_child(new_post)
 		new_post.rect_min_size = Vector2(200, 200)
 		new_post.setup_card(post["name"], post["id"], post["about"], post["like_cost"], post["type"])
+	Debug.add_log("Tinder ready!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

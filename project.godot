@@ -24,15 +24,29 @@ config/name="Куриная Империя"
 run/main_scene="res://scenes/Menu.tscn"
 config/icon="res://images/King_Chicken.png"
 config/=false
+config=false
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
+Debug="*res://scripts/Debug.gd"
+
+[config]
+
+main_run_args=true
 
 [display]
 
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor]
+
+main_run_args="--mode=debug"
+
+[global]
+
+\=false
 
 [gui]
 

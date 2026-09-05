@@ -17,7 +17,6 @@ func _ready():
 			queue_free()
 		var root_node = get_tree().get_root()
 		get_parent().remove_child(self)
-		print(get_parent(), self)
 		root_node.add_child(self)
 	yield(get_tree(), "idle_frame")
 	if get_parent() is Viewport and auto_play:

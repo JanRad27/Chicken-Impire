@@ -73,7 +73,6 @@ class time:
 		
 
 var game_time: time = time.new(0, 0, 13)
-			
 func _ready():
 	OS.set_window_title(tr("GAME_NAME"))
 	chicken_first_names = [tr("FN_NASETKA_TEXT"), tr("FN_KLUSHA_TEXT"), tr("FN_TSYPA_TEXT"), tr("FN_PESTRUSHKA_TEXT"), tr("FN_RYABA_TEXT")]
@@ -121,8 +120,9 @@ func _ready():
 	timer.connect("timeout", self, "_update")
 	rooster_bank_timer.connect("timeout", self, "credit_pay")
 func _update():
-	if get_tree().current_scene and not get_tree().current_scene.filename == "res://scenes/Menu.tscn":
+	if get_tree().current_scene and not get_tree().current_scene.filename in ["res://scenes/Menu.tscn", "res://scenes/Settings.tscn"]:
 		game_time.add(1800)
+		Debug.add_log("Time ticked!")
 		for chicken in chickens.values():
 			if chicken["satiety"] > 0 and chicken["type"] in ["basic",]:
 				chicken["satiety"] -= 1 
@@ -164,8 +164,7 @@ func _process(_delta):
 		if credit_summ["remaining"] <= 0 and in_credit:
 			clear_credit()
 		var hours = int(game_time.get_time_array()[2])
-		print(hours)
-		if not get_tree().current_scene.filename in ["res://scenes/In_Kass.tscn", "res://scenes/Hospital.tscn", "res://scenes/House_in.tscn", "res://scenes/PC.tscn"]:
+		if not get_tree().current_scene.filename in ["res://scenes/In_Kass.tscn", "res://scenes/Hospital.tscn", "res://scenes/House_in.tscn", "res://scenes/PC.tscn", "res://scenes/RoosterBank.tscn", "res://scenes/Shop.tscn", "res://scenes/ChickenTinder.tscn", "res://scenes/Menu.tscn", "res://scenes/Settings.tscn"]:
 			if hours >= 0 and hours < 5:
 				fade_screen.color = Color(0, 0, 0, 0.95)
 			elif hours >= 5 and hours < 7:

@@ -17,6 +17,7 @@ func _ready():
 			add_child(chick)
 			chick.global_position = Vector2(chicken_x, 0)
 			chicken_x += 50
+	Debug.add_log("Street ready!")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
