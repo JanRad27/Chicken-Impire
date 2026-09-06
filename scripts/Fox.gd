@@ -6,13 +6,14 @@ var velocity = Vector2.ZERO
 var escaping: bool = false
 var hole_node: StaticBody2D
 var target: Vector2
+var not_quiting: bool = false
 
 func _ready():
 	hole_node = get_node(hole)
 	Debug.add_log("Fox spawned!")
 
 func _process(delta):
-	if int(Global.game_time.get_time_array()[2]) > 7:
+	if int(Global.game_time.get_time_array()[2]) > 7 and not not_quiting:
 		Debug.add_log("Fox exited: Morning starts!")
 		queue_free()
 	velocity = Vector2.ZERO
@@ -32,6 +33,7 @@ func _process(delta):
 
 func detected(body):
 	if "Chicken" in body.name and not "GigaChicken" in body.name and not escaping:
+		not_quiting = true
 		target = Vector2.ZERO
 		Debug.add_log("Fox detected chicken in vision radius!")
 		$DetectionArea.disconnect("body_entered", self, "detected")
@@ -58,6 +60,7 @@ func detected(body):
 		Debug.add_log("Fox killed chicken!")
 		$AngryBar.value = 0
 		$DetectionArea.connect("body_entered", self, "detected")
+		not_quiting = false
 	elif body.name == "GigaChicken":
 		escaping = true
 		Debug.add_log("Fox detected GigaChicken and started escaping!")

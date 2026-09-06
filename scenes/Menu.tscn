@@ -68,7 +68,7 @@ margin_left = -182.0
 margin_top = -36.0
 custom_colors/font_color = Color( 1, 1, 1, 0.572549 )
 custom_fonts/font = ExtResource( 1 )
-text = "v1.0.2 Release"
+text = "v1.1.0 Release"
 
 [node name="BackgroundMusicServer" type="Node" parent="."]
 script = ExtResource( 3 )

@@ -5,11 +5,11 @@ var eggs = 0  # Баланс яиц
 var satiety = 100 # Сытость фермера
 var money = 0  # Деньги
 var hugrying_speed = 0.3 # Скорость Голодания
-var chickens =  {
-	0:{"id":0, "name":"Галина", "satiety":100, "type":"basic"},
-	1:{"id":1, "name":"Ряба", "satiety":100, "type":"basic"},
-	2:{"id":2, "name":"Желтенькая", "satiety":100, "type":"basic"}
-} # Курицы
+var chickens =  [
+	{"id":0, "name":"Галина", "satiety":100, "type":"basic"},
+	{"id":1, "name":"Ряба", "satiety":100, "type":"basic"},
+	{"id":2, "name":"Желтенькая", "satiety":100, "type":"basic"}
+] # Курицы
 var fade_screen: ColorRect
 var total_stored = {"corn":0, "wheat":0, "compound_feed_k3":0, "compound_feed_k2":0, "compound_feed_k1":0} # Запас еды кур в сарае
 var player_may_move = true
@@ -123,7 +123,7 @@ func _update():
 	if get_tree().current_scene and not get_tree().current_scene.filename in ["res://scenes/Menu.tscn", "res://scenes/Settings.tscn"]:
 		game_time.add(1800)
 		Debug.add_log("Time ticked!")
-		for chicken in chickens.values():
+		for chicken in chickens:
 			if chicken["satiety"] > 0 and chicken["type"] in ["basic",]:
 				chicken["satiety"] -= 1 
 				eggs += 1
@@ -142,13 +142,13 @@ func _process(_delta):
 		# Растягиваем его под разрешение экрана твоего ноутбука Acer [221.1, 395.1]
 		if fade_screen:
 			fade_screen.rect_size = get_viewport().size
-		for chicken in chickens.values():
+		for chicken in chickens:
 			if chicken["satiety"] > 100:
 				chicken["satiety"] = 100
 		if satiety <= 0:
 			satiety = 100.0
 			fade()
-		for chicken in chickens.values():
+		for chicken in chickens:
 			last_chicken_id = chicken["id"]
 		for post in chiken_tinder_posts:
 			if post["id"] > last_chicken_id:
@@ -166,7 +166,7 @@ func _process(_delta):
 		var hours = int(game_time.get_time_array()[2])
 		if not get_tree().current_scene.filename in ["res://scenes/In_Kass.tscn", "res://scenes/Hospital.tscn", "res://scenes/House_in.tscn", "res://scenes/PC.tscn", "res://scenes/RoosterBank.tscn", "res://scenes/Shop.tscn", "res://scenes/ChickenTinder.tscn", "res://scenes/Menu.tscn", "res://scenes/Settings.tscn"]:
 			if hours >= 0 and hours < 5:
-				fade_screen.color = Color(0, 0, 0, 0.95)
+				fade_screen.color = Color(0, 0, 0, 0.85)
 			elif hours >= 5 and hours < 7:
 				fade_screen.color = Color(0, 0, 0, 0.80)
 			elif hours >= 7 and hours < 13:
@@ -178,7 +178,7 @@ func _process(_delta):
 			elif hours >= 20 and hours < 22:
 				fade_screen.color = Color(0, 0, 0, 0.80)
 			else:
-				fade_screen.color = Color(0, 0, 0, 0.95)
+				fade_screen.color = Color(0, 0, 0, 0.85)
 		else:
 			fade_screen.color = Color(0, 0, 0, 0)
 func hungry_farmer(points):

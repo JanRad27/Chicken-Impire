@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export(int) var chicken_id = 0
-onready var my_data = null
+var my_data = null
 var bug_in_vision = {"on":false, "data":null}
 
 var speed = 120 # Скорость плавного бега объекта
@@ -27,7 +27,7 @@ func eat_grass():
 func _process(delta):
 	if is_died:
 		return
-	for chicken in Global.chickens.values():
+	for chicken in Global.chickens:
 		if chicken["id"] == chicken_id:
 			my_data = chicken
 			break
@@ -74,8 +74,11 @@ func _physics_process(delta):
 func kill():
 	is_died = true
 	$Sprite.texture = load("res://images/died_chicken.png")
+	for i in range(Global.chickens.size() - 1, -1, -1):
+		if Global.chickens[i]["id"] == chicken_id:
+			Global.chickens.remove(i)
+			break
 	yield(get_tree().create_timer(5.0), "timeout")
-	Global.chickens.erase(my_data)
 	queue_free()
 	
 	

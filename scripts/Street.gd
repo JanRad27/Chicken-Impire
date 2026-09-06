@@ -6,7 +6,7 @@ var GChicken_scene = preload("res://scenes/GigaChicken.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var chicken_x = 0
-	for chicken in Global.chickens.values():
+	for chicken in Global.chickens:
 			var chick
 			if chicken["type"] == "basic":
 				chick = Chicken_scene.instance()
