@@ -27,7 +27,7 @@ func _liked():
 		$HBoxContainer/LikeButton.texture_normal = load("res://images/Like_Pressed.png")
 		yield(get_tree().create_timer(3.0), "timeout")
 		Global.money -= like_cost
-		Global.chickens[chicken_id] = {"id":chicken_id, "name":chicken_name, "satiety":100, "type":type}
+		Global.chickens.append({"id":chicken_id, "name":chicken_name, "satiety":100, "type":type})
 		for post in Global.chiken_tinder_posts:
 			if post["id"] == chicken_id:
 				Global.chiken_tinder_posts.erase(post)
