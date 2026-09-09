@@ -7,7 +7,7 @@ var GChicken_scene = preload("res://scenes/GigaChicken.tscn")
 func _ready():
 	var chicken_x = 0
 	for chicken in Global.chickens:
-			var chick
+			var chick 
 			if chicken["type"] == "basic":
 				chick = Chicken_scene.instance()
 				chick.chicken_id = chicken["id"]

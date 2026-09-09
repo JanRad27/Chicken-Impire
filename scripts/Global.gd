@@ -30,6 +30,7 @@ var chicken_types: Array = [
 	"basic", # Несушка
 	"giga" # Цыпа-гигачад
 ]
+var currently_price_boost: float = 1.5
 class time:
 	var value: Dictionary
 	func _init(seconds: int, minutes: int, hours: int):
