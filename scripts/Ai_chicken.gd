@@ -4,6 +4,7 @@ export(int) var chicken_id = 0
 var my_data = null
 var bug_in_vision = {"on":false, "data":null}
 
+
 var speed = 120 # Скорость плавного бега объекта
 var target_position = Vector2(global_position) 
 var eat_need_for_one = 50
