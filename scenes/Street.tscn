@@ -90,4 +90,4 @@ rotation = -4.34412
 
 [node name="RoosterMillioner" parent="." instance=ExtResource( 12 )]
 position = Vector2( 491, 287 )
-chicken_id = -2
+chicken_id = 2

@@ -22,7 +22,7 @@ func _process(_delta):
 	elif type == "giga":
 		$TextureRect.texture = load("res://images/Gigachicken.png")
 	elif type == "millioner":
-		$TextureRect.texture = load()
+		$TextureRect.texture = load("res://images/RoosterMillioner.png")
 	
 func _liked():
 	if Global.money >= like_cost:

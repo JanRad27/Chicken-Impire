@@ -38,7 +38,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	# Проверяем расстояние: если мы уже близко к цели (ближе 5 пикселей), то стоим на месте
-	if global_position.distance_to(target_position) > 5:
+	if target_position and global_position.distance_to(target_position) > 5:
 		# 1. Находим направление и 2. Нормализуем его
 		var direction = (target_position - global_position).normalized()
 		
@@ -75,6 +75,8 @@ func eat_bug_eat(body):
 			Global.currently_price_boost += 0.1
 		elif "k2" in body.name:
 			Global.currently_price_boost += 0.05
+		elif "k3" in body.name:
+			Global.currently_price_boost += 0.01
 		var eat_need_p = 100 - my_data["satiety"]
 		var eat_need_g = eat_need_p * eat_need_for_one
 		eat_need_g = eat_need_g / body.eat_satiety

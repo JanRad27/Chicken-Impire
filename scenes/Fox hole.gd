@@ -11,7 +11,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if my_fox: my_fox = get_tree().get_root().get_node_or_null(my_fox.get_path())
 	if int(Global.game_time.get_time_array()[2]) < 7:
 		spawn_fox()
 

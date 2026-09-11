@@ -23,7 +23,7 @@ func _sell_eggs():
 		Debug.add_log("Egg selling error: No enough eggs!")
 	else:
 		Global.eggs -= egg_call
-		Global.money += egg_call * Global.currently_price_boost
+		Global.money += egg_call * 1.5
 		$Output.text = tr("SELLED_TEXT")
 		$Output.visible = true
 		randomizer.randomize()
