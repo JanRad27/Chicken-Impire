@@ -22,7 +22,7 @@ jobs:
         run: sudo apt update && sudo apt install godot3-server
 
       - name: test
-        run: godot3-server --test-only -quit
+        run: godot3-server --test-only --quit
       - name: Auto-Merge Pull Request
         if: success()
         run: |
