@@ -9,6 +9,9 @@ jobs:
   test:
     name: Test the code
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
       - name: checkout repository
@@ -21,11 +24,8 @@ jobs:
       - name: setup godot
         run: sudo apt update && sudo apt install godot3-server
 
-      - name: run test
-        run: godot
-
       - name: test
-        run: godot3 --test-only
+        run: godot3-server --test-only --quit
       - name: Auto-Merge Pull Request
         if: success()
         run: |
