@@ -21,9 +21,6 @@ jobs:
       - name: setup godot
         run: sudo apt update && sudo apt install godot3-server
 
-      - name: run test
-        run: godot
-
       - name: test
         run: godot3 --test-only
       - name: Auto-Merge Pull Request
