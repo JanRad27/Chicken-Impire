@@ -28,7 +28,8 @@ var credit_summ = {"remaining":0, "start":0}
 var window: AcceptDialog = AcceptDialog.new()
 var chicken_types: Array = [
 	"basic", # Несушка
-	"giga" # Цыпа-гигачад
+	"giga", # Цыпа-гигачад
+	"millioner" # Петух-Миллионер
 ]
 var currently_price_boost: float = 1.5
 class time:
@@ -250,7 +251,6 @@ func generate_chicken_tinder_post():
 	var chicken_last_name
 	var chicken_status
 	var chicken_id = last_chicken_id + 1
-	var chicken_cost = now_like_cost
 	var random_generator = RandomNumberGenerator.new()
 	var type
 	random_generator.randomize()
@@ -263,6 +263,7 @@ func generate_chicken_tinder_post():
 	random_generator.randomize()
 	type = chicken_types[random_generator.randi_range(0, len(chicken_types) - 1)]
 	# Формируем словарь для chicken_tinder_posts
+	var chicken_cost = now_like_cost if not type == "millioner" else now_like_cost * 5
 	var post = {"name":chicken_name, "about":chicken_status, "id":chicken_id, "like_cost":chicken_cost, "type":type}
 	# Завершение: Добавляем анкету и повышаем цену следующей куры на 10 руб.
 	chiken_tinder_posts.append(post)
