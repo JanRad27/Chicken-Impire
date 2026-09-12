@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var fox_scene = preload("res://scenes/Fox.tscn")
 onready var path: NodePath = get_path()
-var my_fox
+var my_fox: KinematicBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +15,7 @@ func _process(delta):
 		spawn_fox()
 
 func spawn_fox():
-	if my_fox:
+	if is_instance_valid(my_fox):
 		return
 	my_fox = fox_scene.instance()
 	my_fox.hole = path
