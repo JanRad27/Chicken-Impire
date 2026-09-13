@@ -60,7 +60,7 @@ NOENOUGHMONEY_TEXT,Недостаточно денег осталось ещё %
 ENTERSUMM_TEXT,Введите сумму,Enter summ
 CONFIRM_BUTTON,Подтвердить,Accept
 ROOSTERBANKTAKECREDIT_TEXT,ПетухБанк -> Кредиты -> Взять Кредит,RoosterBank -> Credits -> Take a Credit
-KASSLABEL_TEXT,Яйца: %d | Запрос Яиц: %d | Деньги: %d,Eggs: %d | Eggs Request: %d | Money: %d
+KASSLABEL_TEXT,Яйца: %d | Белые Яйца: %d | Запрос Яиц: %d | Деньги: %d,Eggs: %d | Eggs Request: %d | Money: %d
 SELLEGGS_TEXT,Продать Яйца,Sell Eggs
 SELLED_TEXT,Успешно продано!,Selled Successfull!
 NOENOUGHEGGS_TEXT,Недостаточно Яиц!,No Enough Eggs!
@@ -90,3 +90,5 @@ LANG_TEXT,Язык,Language
 MENU_BUTTON,В меню,Go menu
 REMAINING_TEXT,Остаток: ,Remaining: 
 TIME_TEXT,Время: %d:%d,Time: %d:%d
+WHITEEGGS_TEXT, Белые яйца: %d, White Eggs: %d
+SELLWHITEEGGS_TEXT,Продать белые яйца,Sell white eggs

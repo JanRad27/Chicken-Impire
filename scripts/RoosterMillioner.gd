@@ -7,7 +7,6 @@ export(int) var chicken_id
 var my_data
 var target_position
 var speed = 150
-const is_died = true
 const eat_need_for_one = 400
 # Declare member variables here. Examples:
 # var a = 2
@@ -46,7 +45,7 @@ func _physics_process(delta):
 		var velocity = direction * speed
 		move_and_slide(velocity)
 
-
+ 
 func _detect(body):
 	if "Fox" in body.name:
 		if security:
@@ -71,7 +70,7 @@ func _undetect(body):
 
 
 func eat_bug_eat(body):
-	if body.name.begins_with("Bug_Compound_Food") and not is_died:
+	if body.name.begins_with("Bug_Compound_Food"):
 		if "k1" in body.name:
 			Global.currently_price_boost += 0.1
 		elif "k2" in body.name:
