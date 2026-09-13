@@ -3,7 +3,7 @@ name: Test Code To Dev
 # Setup Triggers
 on: 
   pull_request: 
-    branches: [dev]
+    branches: [dev, main]
 # Jobs
 jobs:
   test:
