@@ -62,6 +62,7 @@ func _detect(body):
 		
 func _undetect(body):
 	if "Fox" in body.name:
+		yield(get_tree().create_timer(5.0), "timeout")
 		remove_child(security)
 		security = null
 	elif body.name.begins_with("Bug_Corn") or body.name.begins_with("Bug_Wheat") or body.name.begins_with("Bug_Compound_Food"):

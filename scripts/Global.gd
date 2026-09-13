@@ -7,7 +7,7 @@ var money = 0  # Деньги
 var hugrying_speed = 0.3 # Скорость Голодания
 var chickens =  [
 	{"id":0, "name":"Галина", "satiety":100, "type":"basic"},
-	{"id":1, "name":"Ряба", "satiety":100, "type":"basic"},
+	{"id":1, "name":"Ряба", "satiety":100, "type":"white"},
 	{"id":2, "name":"Желтенькая", "satiety":100, "type":"basic"}
 ] # Курицы
 var fade_screen: ColorRect
@@ -29,7 +29,8 @@ var window: AcceptDialog = AcceptDialog.new()
 var chicken_types: Array = [
 	"basic", # Несушка
 	"giga", # Цыпа-гигачад
-	"millioner" # Петух-Миллионер
+	"millioner", # Петух-Миллионер
+	"white" # Белая Несушка
 ]
 class time:
 	var value: Dictionary

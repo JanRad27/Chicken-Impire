@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+
+export(String, "red", "white") var type = "red"
 export(int) var chicken_id = 0
 var my_data = null
 var bug_in_vision = {"on":false, "data":null}
@@ -8,8 +10,18 @@ var speed = 120 # Скорость плавного бега объекта
 var target_position = Vector2(global_position) 
 var eat_need_for_one = 50
 var is_died: bool = false
-
+var textures_basic := {"red":preload("res://images/Chicken.png"), "white":preload("res://images/Chicken_White.png")}
+var textures_eating_grass := {"red":preload("res://images/Chicken-Eating-Grass.png"), "white":preload("res://images/Chicken-white-eating-grass.png")}
+var textures_died = {"red":preload("res://images/died_chicken.png"), "white":preload("res://images/died_chicken_white.png")}
 func _ready():
+	if type == "red":
+		$Sprite.texture = textures_basic["red"]
+	elif type == "white":
+		$Sprite.texture = textures_basic["white"]
+	else:
+		Debug.add_log("Error: Chicken type: " + type + " not exists. Defaulting to red...")
+		type = "red"
+		_ready()
 	var eating_timer = Timer.new()
 	eating_timer.wait_time = 3.0
 	eating_timer.autostart = true
@@ -21,9 +33,9 @@ func _ready():
 	
 func eat_grass():
 	if my_data["satiety"] > 0 and not is_died:
-		$Sprite.texture = preload("res://images/Chicken-Eating-Grass.png")
+		$Sprite.texture = textures_eating_grass["red"] if type == "red" else textures_eating_grass["white"]
 		yield(get_tree().create_timer(1.0), "timeout")
-		$Sprite.texture = preload("res://images/Chicken.png")
+		$Sprite.texture = textures_basic["red"] if type == "red" else textures_basic["white"]
 func _process(delta):
 	if is_died:
 		return
@@ -73,12 +85,10 @@ func _physics_process(delta):
 		move_and_slide(velocity)
 func kill():
 	is_died = true
-	$Sprite.texture = load("res://images/died_chicken.png")
+	$Sprite.texture = textures_died["red"] if type == "red" else textures_died["white"]
 	for i in range(Global.chickens.size() - 1, -1, -1):
 		if Global.chickens[i]["id"] == chicken_id:
 			Global.chickens.remove(i)
 			break
 	yield(get_tree().create_timer(5.0), "timeout")
 	queue_free()
-	
-	

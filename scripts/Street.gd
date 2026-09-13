@@ -9,10 +9,11 @@ func _ready():
 	var chicken_x = 0
 	for chicken in Global.chickens:
 			var chick
-			if chicken["type"] == "basic":
+			if chicken["type"] == "basic" or chicken["type"] == "white":
 				chick = Chicken_scene.instance()
 				chick.global_position = Vector2(chicken_x, 0)
 				chick.chicken_id = chicken["id"]
+				chick.type = "red" if chicken["type"] == "basic" else "white"
 			elif chicken["type"] == "giga":
 				chick = GChicken_scene.instance()
 				chick.base_position = Vector2(chicken_x, 100)
