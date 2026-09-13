@@ -1,13 +1,13 @@
 extends Node
 
 var custom_theme: Theme = Theme.new()
-var eggs = 0  # Баланс яиц
+var eggs: int =0  # Баланс яиц
 var satiety = 100 # Сытость фермера
 var money = 0  # Деньги
 var hugrying_speed = 0.3 # Скорость Голодания
 var chickens =  [
 	{"id":0, "name":"Галина", "satiety":100, "type":"basic"},
-	{"id":1, "name":"Ряба", "satiety":100, "type":"basic"},
+	{"id":1, "name":"Ряба", "satiety":100, "type":"white"},
 	{"id":2, "name":"Желтенькая", "satiety":100, "type":"basic"}
 ] # Курицы
 var fade_screen: ColorRect
@@ -29,8 +29,10 @@ var window: AcceptDialog = AcceptDialog.new()
 var chicken_types: Array = [
 	"basic", # Несушка
 	"giga", # Цыпа-гигачад
-	"millioner" # Петух-Миллионер
+	"millioner", # Петух-Миллионер
+	"white" # Белая Несушка
 ]
+var white_eggs: int
 class time:
 	var value: Dictionary
 	func _init(seconds: int, minutes: int, hours: int):
@@ -74,6 +76,7 @@ class time:
 		
 
 var game_time: time = time.new(0, 0, 13)
+var currently_price_boost: float = 1.5
 func _ready():
 	OS.set_window_title(tr("GAME_NAME"))
 	chicken_first_names = [tr("FN_NASETKA_TEXT"), tr("FN_KLUSHA_TEXT"), tr("FN_TSYPA_TEXT"), tr("FN_PESTRUSHKA_TEXT"), tr("FN_RYABA_TEXT")]
@@ -125,9 +128,12 @@ func _update():
 		game_time.add(1800)
 		Debug.add_log("Time ticked!")
 		for chicken in chickens:
-			if chicken["satiety"] > 0 and chicken["type"] in ["basic",]:
-				chicken["satiety"] -= 1 
-				eggs += 1
+			if chicken["satiety"] > 0 and chicken["type"] in ["basic", "white"]:
+				chicken["satiety"] -= 1
+				if chicken["type"] == "basic":
+					eggs += 1
+				elif chicken["type"] == "white":
+					white_eggs += 1
 		if not player_arrested:
 			satiety -= hugrying_speed
 		else:
