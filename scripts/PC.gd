@@ -36,7 +36,7 @@ func poweroff():
 func go_chinder():
 	get_tree().change_scene("res://scenes/ChickenTinder.tscn")
 func _process(delta):
-	$Label.text = tr("EGGS_TEXT") + ": " + str(Global.eggs) + " | " + tr("SATIETY_TEXT") + ": " + str(Global.satiety) + "%" + " | " + tr("MONEY_TEXT") + ": " + str(Global.money) + "\n" + tr("TIME_TEXT") % [int(Global.game_time.get_time_array()[2]), int(Global.game_time.get_time_array()[1])]
+	$Label.text = tr("EGGS_TEXT") + ": " + str(Global.eggs) + " | " + tr("WHITEEGGS_TEXT") % Global.white_eggs + " | " + tr("SATIETY_TEXT") + ": " + str(Global.satiety) + "%" + "\n" + tr("MONEY_TEXT") + ": " + str(Global.money) + " | " + tr("TIME_TEXT") % [int(Global.game_time.get_time_array()[2]), int(Global.game_time.get_time_array()[1])]
 func go_rooster_bank():
 	get_tree().change_scene("res://scenes/RoosterBank.tscn")
 func menu():
