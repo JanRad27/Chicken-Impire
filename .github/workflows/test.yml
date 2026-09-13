@@ -3,7 +3,7 @@ name: Test Code To Dev
 # Setup Triggers
 on: 
   pull_request: 
-    branches: [dev]
+    branches: [dev, main]
 # Jobs
 jobs:
   test:
@@ -15,7 +15,8 @@ jobs:
 
     steps:
       - name: checkout repository
-        uses: actions/checkout@v4
+        uses: actions/ch
+  pull_request: eckout@v4
         with:
           # refs/pull/${{ github.event.number }}/merge гарантирует, 
           # что мы проверяем код PR, уже виртуально смерженный с вашей веткой
